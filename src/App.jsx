@@ -1,6 +1,6 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-// import './App.css'
+import './App.css'
 
 // import React, { useState } from 'react';
 
@@ -75,12 +75,11 @@
 import React, { useState } from 'react';
 
 const DelayedAction = () => {
-  const [actionStatus, setActionStatus] = useState('Idle');
-  const [delayDuration, setDelayDuration] = useState(3000);
+  const [actionStatus, setActionStatus] = useState('Text will Appear here');
+  const [delayDuration, setDelayDuration] = useState(500);
   const [text, setText] = useState('');
 
   const handleButtonClick = () => {
-    setActionStatus('Action in progress...');
 
     const words = text.split(' ');
     
@@ -93,8 +92,10 @@ const DelayedAction = () => {
 
   return (
     <div>
-      <p>Status: {actionStatus}</p>
-      <button onClick={handleButtonClick}>Trigger Delayed Action</button>
+      <h1>What is RSVP reading?</h1>
+      <p>Rapid serial visual presentation (RSVP) is a method for bypassing eye movements during reading. In RSVP, each word (or small group of words) appears in the same location, serially.</p>
+      <h1>{actionStatus}</h1>
+      <button onClick={handleButtonClick}>Start Reading</button>
       <input
         type="number"
         value={delayDuration}
@@ -103,8 +104,9 @@ const DelayedAction = () => {
       <textarea 
         value={text} 
         onChange={event => setText(event.target.value)} 
+        rows={4}
+        cols={40}
       />
-      <p>{text.split(' ').join(' ')}</p> {/* Display words as a comma-separated list */}
     </div>
   );
 };
