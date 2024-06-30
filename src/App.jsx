@@ -33,7 +33,7 @@ const DelayedAction = () => {
       <input 
         type="range" min="1" max="10"  
       /> 
-    {/* Make Range bar the wpm selector */}
+    {/* Make Range bar the wpm selector move the text input*/} 
       <textarea 
         value={text} 
         onChange={event => setText(event.target.value)} 
