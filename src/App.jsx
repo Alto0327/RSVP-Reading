@@ -18,6 +18,7 @@ const DelayedAction = () => {
     });
   };
 
+  
   return (
     <div>
       <h1>What is RSVP reading?</h1>
@@ -29,6 +30,10 @@ const DelayedAction = () => {
         value={delayDuration}
         onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
       />
+      <input 
+        type="range" min="1" max="10"  
+      /> 
+    {/* Make Range bar the wpm selector */}
       <textarea 
         value={text} 
         onChange={event => setText(event.target.value)} 
