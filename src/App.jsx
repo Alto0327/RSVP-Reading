@@ -27,7 +27,7 @@ const DelayedAction = () => {
       <h1>{actionStatus}</h1>
       <button onClick={handleButtonClick}>Start Reading</button>
       <input 
-        type="range" min="10" max="1000"
+        type="range" min="100" max="1000"
         value={delayDuration} 
         onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))} 
       /> 
