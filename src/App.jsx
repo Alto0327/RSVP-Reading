@@ -26,7 +26,7 @@ const DelayedAction = () => {
       <p>Rapid serial visual presentation (RSVP) is a method for bypassing eye movements during reading. In RSVP, each word (or small group of words) appears in the same location, serially.</p>
       <h1>{actionStatus}</h1>
       <button onClick={handleButtonClick}>Start Reading</button>
-      <input 
+      <input //set indentation on Slider to sorta lock onto set WPM speeds
         type="range" min="100" max="1000"
         value={delayDuration} 
         onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))} 
