@@ -1,5 +1,4 @@
 import "./App.css";
-
 import React, { useState } from "react";
 
 const DelayedAction = () => {
@@ -30,21 +29,23 @@ const DelayedAction = () => {
     <div>
       <div className="container">
         <section className="leftSide-Main">
-          <h1>What is RSVP reading?</h1>
+          <h1>RSVP reading</h1>
+          <h2>Rapid Serial Visual Presentation</h2>
           <p>
             Rapid serial visual presentation (RSVP) is a method for bypassing
             eye movements during reading. In RSVP, each word (or small group of
             words) appears in the same location, serially.
           </p>
+          {/* Button Should be After the Text Paragraph */}
           <iframe
             src="https://www.youtube.com/embed/5yddeRrd0hA&ab"
             frameborder="0"
-          ></iframe>
-        </section>
+            ></iframe>
+        </section> 
         <section className="rightSide-Main">
           <h1>{actionStatus}</h1>
-          <button onClick={handleButtonClick}>Start Reading</button>
-          <input //set indentation on Slider to sorta lock onto set WPM speeds
+          <button onClick={handleButtonClick}>Start Reading</button> 
+          <input
             type="range"
             min="100"
             max="1000"
@@ -58,7 +59,7 @@ const DelayedAction = () => {
             <option value={200}>200 WPM</option>
             <option value={240}>240 WPM</option>
             <option value={280}>280 WPM</option>
-            <option value={320}>320 WPM</option>
+            <option value={326}>326 WPM</option>
           </select>
           <p>Words Per minute: {Wpm}</p>
           <textarea
