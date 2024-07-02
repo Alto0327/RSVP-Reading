@@ -32,13 +32,6 @@ const DelayedAction = () => {
         onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))} 
       /> 
     {/* Make Range bar the wpm selector move the text input*/} 
-      <input type="text"
-        value={WPM}
-        onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))} 
-        //Above code causes error here so need to create a new function to hanlde WPM change 
-        //1.Calculate delay duration from WPM when the user inputs WPM.
-        //Update the delay duration accordingly.
-      />
       <p>Words Per minute: {WPM}</p>
       <textarea 
         value={text} 
