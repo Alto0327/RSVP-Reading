@@ -29,12 +29,20 @@ const DelayedAction = () => {
 
   return (
     <div>
+      <div className="container">
+        <section className="leftSide-Main">
       <h1>What is RSVP reading?</h1>
       <p>
         Rapid serial visual presentation (RSVP) is a method for bypassing eye
         movements during reading. In RSVP, each word (or small group of words)
         appears in the same location, serially.
       </p>
+      <iframe
+            src="https://www.youtube.com/embed/5yddeRrd0hA&ab"
+            frameborder="0"
+          ></iframe>
+          </section>
+          <section className="rightSide-Main">
       <h1>{actionStatus}</h1>
       <button onClick={handleButtonClick}>Start Reading</button>
       <input //set indentation on Slider to sorta lock onto set WPM speeds
@@ -60,6 +68,8 @@ const DelayedAction = () => {
         rows={4}
         cols={40}
       />
+              </section>
+              </div>
     </div>
   );
 };
