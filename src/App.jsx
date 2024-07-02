@@ -63,6 +63,11 @@ const DelayedAction = () => {
             <option value={326}>326 WPM</option>
           </select>
           <p>Words Per minute: {Wpm}</p>
+          {/* To Add n fix
+            1. Make Text Area Larger
+            2. Add word n pdf File only uploader
+            3. Add a Remaining word char on bottom right of Text Area
+          */}
           <textarea
             value={text}
             onChange={(event) => setText(event.target.value)}
