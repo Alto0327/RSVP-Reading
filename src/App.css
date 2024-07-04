@@ -1,10 +1,5 @@
 #root {
-  margin: 0 auto;
-  height: 100vh; /* Ensure the root element takes the full viewport height */
-  display: flex; /* Use flex to center the container */
-  justify-content: center; /* Center the container horizontally */
-  align-items: center; /* Center the container vertically */
-  
+  height: 100vh; /* Ensure the root element takes the full viewport height */  
 }
 *{
   overflow-y: hidden;
@@ -20,12 +15,17 @@
   width: 30%;
   flex-direction: column;
 }
+
+.leftSide-Main h1{
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
 .rightSide-Main{
   display: flex;
   flex-direction: column;
 }
 
-.textUpload{
+.Wpm-textUpload{
   display: flex;
   flex-direction: column;
   padding:1rem;
@@ -34,8 +34,4 @@
 
 .Wpm-slider{
   width: 30%;
-}
-
-h1{
-  font-size: 3.5rem;
 }
