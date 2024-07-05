@@ -35,3 +35,39 @@
 .Wpm-slider{
   width: 30%;
 }
+
+
+
+/* Default styles (for larger screens by default) */
+
+/* Smartphones */
+@media only screen and (max-width: 600px) {
+  /* Styles for smartphones */
+}
+
+/* High-Resolution Smartphones */
+@media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (max-width: 600px) and (min-resolution: 192dpi) {
+  /* Styles for high-resolution smartphones */
+}
+
+/* Tablets */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  /* Styles for tablets */
+}
+
+/* High-Resolution Tablets */
+@media only screen and (min-width: 600px) and (max-width: 900px) and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-width: 600px) and (max-width: 900px) and (min-resolution: 192dpi) {
+  /* Styles for high-resolution tablets */
+}
+
+/* Laptops and Small Desktops */
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+  /* Styles for laptops and small desktops */
+}
+
+/* Large Desktops */
+@media only screen and (min-width: 1200px) {
+  /* Styles for large desktops */
+}
