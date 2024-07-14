@@ -41,12 +41,22 @@
   align-items: flex-end;
   
 }
-
+.Wpm__selectors{
+  display: flex;
+  justify-content: start;
+  padding-bottom: 1rem;
+}
 .Wpm-slider{
-  width: 30%;
+  width: 100%;
 }
 
+.Wpm-select{
+  width: 50%;
+}
 
+.RSVP--button{
+  width: 30%;
+}
 
 /* Default styles (for larger screens by default) */
 
