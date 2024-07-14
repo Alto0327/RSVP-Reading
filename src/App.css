@@ -1,26 +1,24 @@
-#root {
-  height: 100vh; /* Ensure the root element takes the full viewport height */  
-}
-*{
-  overflow-y: hidden;
-}
-.container {
+.Container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  min-height: 100vh;
+  min-width: 100vh;
 }
 
-.leftSide-Main{
+.Container__left{
   display: flex;
-  width: 30%;
   flex-direction: column;
+  align-items: flex-start;
+  width: 30rem;
 }
 
-.leftSide-Main h1{
-  font-size: 5rem;
-  margin-bottom: 1rem;
+.Container__left h1{
+  font-size: 4rem;
+  line-height: 0.9;
 }
-.rightSide-Main{
+
+.Container__right{
   display: flex;
   flex-direction: column;
 }
@@ -28,6 +26,7 @@
 .Wpm-textUpload{
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   padding:1rem;
   
 }

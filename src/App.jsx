@@ -26,9 +26,8 @@ const DelayedAction = () => {
   const Wpm = Math.round(60000 / delayDuration);
 
   return (
-    <div>
-      <div className="container">
-        <section className="leftSide-Main">
+      <div className="Container">
+        <div className="Container__left">
           <h1>
             RSVP <br />
             Reading
@@ -43,17 +42,22 @@ const DelayedAction = () => {
             located and controlling the pace, RSVP can help improve focus and
             concentration.
           </p>
-          <h3>RSVP Sample (arrow below this or just pointing down)</h3>
-          {/* 
-            Error with Youtube Video causing it to be unable to Play 
-            or Make this a RSVP of the Paragrapgh above
-          */}
-          <iframe
-            src="https://www.youtube.com/embed/5yddeRrd0hA&ab"
-            frameborder="0"
-          ></iframe>
-        </section>
-        <section className="rightSide-Main">
+        <h3>Sample of RSVP</h3> 
+
+        </div>
+        <section className="Container__right">
+          <h2>Insert Text Here:</h2>
+          <div className="Wpm-textUpload">
+            <textarea
+              value={text}
+              onChange={(event) => setText(event.target.value)}
+              rows={10}
+              cols={60}
+              placeholder="paste or upload file to RSVP read"
+            />
+            <input type="file" accept=".doc, .docx, .pdf" />{" "}
+            {/*This uploader does nothing currently */}
+          </div>
           <select value={Wpm} onChange={handleWpmChange} className="Wpm-select"> 
             <option value="" default>
               WPM options
@@ -75,27 +79,11 @@ const DelayedAction = () => {
             onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
           />
           <p className="Wpm-display">Words Per minute: {Wpm}</p>
-          {/* To Add n fix
-            1. Make Text Area Larger
-            3. Add a Remaining word char on bottom right of Text Area
-            */}
-          <div className="Wpm-textUpload">
-            <textarea
-              value={text}
-              onChange={(event) => setText(event.target.value)}
-              rows={10}
-              cols={60}
-              placeholder="paste or upload file to RSVP read"
-            />
-            <input type="file" accept=".doc, .docx, .pdf" />{" "}
-            {/*This uploader does nothing currently */}
-          </div>
           <button onClick={handleButtonClick}>Start Reading</button>
           <h1>{actionStatus}</h1>{" "}
           {/* Button opens modal that displays Text screen, implement a play and pause button, rest button too*/}
         </section>
       </div>
-    </div>
   );
 };
 
