@@ -23,11 +23,13 @@ const DelayedAction = () => {
       setDelayDuration(Math.round(60000 / newWPM));
     }
   };
+const sampleStart = "You are Reading this at 140 words per minutes! ";
   const sample =
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   const handleSampleClick = () => {
-    const sampleDisplay = sample.split(" ");
+    const sampleSet = sampleStart.concat(sample);
+    const sampleDisplay = sampleSet.split(" ");
     sampleDisplay.push("Click to Replay");
     console.log(sampleDisplay);
 
