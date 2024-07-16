@@ -54,8 +54,14 @@
   width: 50%;
 }
 
+.RSVP--button--Container{
+  display: flex;
+  justify-content: center;
+}
+
 .RSVP--button{
-  width: 30%;
+  width: 10rem;
+  height: 2rem;
 }
 
 /* Default styles (for larger screens by default) */
