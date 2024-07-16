@@ -44,7 +44,7 @@ const DelayedAction = () => {
 
   return (
     <div className="Container">
-      <div className="Container__left">
+      <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
           Reading
@@ -56,8 +56,8 @@ const DelayedAction = () => {
         <div className="Sample-rsvp">
           <h2 onClick={handleSampleClick}>{sampleStatus}</h2>
         </div>
-      </div>
-      <div className="Container__right">
+      </section>
+      <section className="Container__right">
         <h2>Insert Text Here:</h2>
         <div className="Wpm-textUpload">
           <textarea
@@ -113,7 +113,7 @@ const DelayedAction = () => {
         </Link>
           <h1>{actionStatus}</h1>
         {/* NEED TO SEND THIS  H1 as a prop to the Rsvp component to where we can read its content there */}
-      </div>
+      </section>
     </div>
   );
 };
