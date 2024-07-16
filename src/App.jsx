@@ -1,5 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -23,7 +25,7 @@ const DelayedAction = () => {
       setDelayDuration(Math.round(60000 / newWPM));
     }
   };
-const sampleStart = "You are Reading this at 140 words per minutes! ";
+  const sampleStart = "You are Reading this at 140 words per minutes! ";
   const sample =
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
@@ -31,7 +33,6 @@ const sampleStart = "You are Reading this at 140 words per minutes! ";
     const sampleSet = sampleStart.concat(sample);
     const sampleDisplay = sampleSet.split(" ");
     sampleDisplay.push("Click to Replay");
-    console.log(sampleDisplay);
 
     sampleDisplay.forEach((sampleDisplay, index) => {
       setTimeout(() => {
@@ -56,7 +57,7 @@ const sampleStart = "You are Reading this at 140 words per minutes! ";
           <h2 onClick={handleSampleClick}>{sampleStatus}</h2>
         </div>
       </div>
-      <section className="Container__right">
+      <div className="Container__right">
         <h2>Insert Text Here:</h2>
         <div className="Wpm-textUpload">
           <textarea
@@ -73,40 +74,46 @@ const sampleStart = "You are Reading this at 140 words per minutes! ";
         <h3 className="">Set WPM</h3>
         <section className="Wpm__selectors">
           <div>
-          <label>Select from Preset:</label>
-          <select value={Wpm} onChange={handleWpmChange} className="Wpm-select">
-            <option value="" default>
-              WPM options
-            </option>
-            <option value={80}>80 WPM</option>
-            <option value={120}>120 WPM</option>
-            <option value={160}>160 WPM</option>
-            <option value={200}>200 WPM</option>
-            <option value={240}>240 WPM</option>
-            <option value={280}>280 WPM</option>
-            <option value={326}>326 WPM</option>
-          </select>
+            <label>Select from Preset:</label>
+            <select
+              value={Wpm}
+              onChange={handleWpmChange}
+              className="Wpm-select"
+            >
+              <option value="" default>
+                WPM options
+              </option>
+              <option value={80}>80 WPM</option>
+              <option value={120}>120 WPM</option>
+              <option value={160}>160 WPM</option>
+              <option value={200}>200 WPM</option>
+              <option value={240}>240 WPM</option>
+              <option value={280}>280 WPM</option>
+              <option value={326}>326 WPM</option>
+            </select>
           </div>
 
           <div>
-          <p>Manually set:</p>
-          <input
-            className="Wpm-slider"
-            type="range"
-            min="100"
-            max="1000"
-            value={delayDuration}
-            onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
+            <p>Manually set:</p>
+            <input
+              className="Wpm-slider"
+              type="range"
+              min="100"
+              max="1000"
+              value={delayDuration}
+              onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
             />
-          <p className="Wpm-display">Words Per minute: {Wpm}</p>
+            <p className="Wpm-display">Words Per minute: {Wpm}</p>
           </div>
         </section>
-        <button className="RSVP--button" onClick={handleButtonClick}>
-          Start Reading
-        </button>
-        <h1>{actionStatus}</h1>
-        {/* Button opens modal that displays Text screen, implement a play and pause button, rest button too*/}
-      </section>
+        <Link to="/RSVP">
+        <div className="RSVP--button--Container">
+          <button className="RSVP--button" onClick={handleButtonClick}>Start Reading</button>
+        </div>
+        </Link>
+          <h1>{actionStatus}</h1>
+        {/* NEED TO SEND THIS  H1 as a prop to the Rsvp component to where we can read its content there */}
+      </div>
     </div>
   );
 };
