@@ -50,7 +50,7 @@ const DelayedAction = () => {
           Reading
         </h1>
         <div className="Description">
-          <h2>Rapid Serial Visual Presentation TEST</h2>
+          <h2>Rapid Serial Visual Presentation</h2>
           <p>{sample}</p>
         </div>
         <div className="Sample-rsvp">
