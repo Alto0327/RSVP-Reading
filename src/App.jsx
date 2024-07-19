@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
 const DelayedAction = () => {
@@ -51,18 +50,7 @@ const DelayedAction = () => {
   function closeModal() {
     setIsOpen(false);
   }
-
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
-  Modal.setAppElement("#root");
+  
   return (
     <div className="Container">
       <section className="Container__left">
@@ -136,12 +124,12 @@ const DelayedAction = () => {
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
+          className="Modal"
+          contentLabel="RSVP Reader"
         >
-          <div>I am a modal</div>
           <h1>{actionStatus}</h1>
         </Modal>
+
       </section>
     </div>
   );

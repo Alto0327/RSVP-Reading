@@ -64,6 +64,19 @@
   height: 2rem;
 }
 
+
+.Modal{
+  margin-left: 20vw;
+  margin-top: 20vh;
+  height: 60vh;
+  width: 60vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b6b6b6;
+}
+
+
 /* Default styles (for larger screens by default) */
 
 /* Smartphones */
