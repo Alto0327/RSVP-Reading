@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import Modal from 'react-modal';
-
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -44,31 +43,26 @@ const DelayedAction = () => {
   };
   const Wpm = Math.round(60000 / delayDuration);
 
-
   function openModal() {
     setIsOpen(true);
     handleButtonClick(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
-
   function closeModal() {
     setIsOpen(false);
   }
+
   const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
     },
   };
-  Modal.setAppElement('#root');
+  Modal.setAppElement("#root");
   return (
     <div className="Container">
       <section className="Container__left">
@@ -133,25 +127,21 @@ const DelayedAction = () => {
             <p className="Wpm-display">Words Per minute: {Wpm}</p>
           </div>
         </section>
-        {/* <Link to="/RSVP"> */}
         <div className="RSVP--button--Container">
-          <button className="RSVP--button" onClick={handleButtonClick}>Start Reading</button>
+          <button className="RSVP--button" onClick={openModal}>
+            Start Reading
+          </button>
         </div>
-        {/* </Link> */}
-          <h1>{actionStatus}</h1>
-            <button onClick={openModal}>Test</button>
+
         <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <div>I am a modal</div>
-            <h1>{actionStatus}</h1>
-      </Modal>
-          
-        {/* NEED TO SEND THIS  H1 as a prop to the Rsvp component to where we can read its content there */}
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <div>I am a modal</div>
+          <h1>{actionStatus}</h1>
+        </Modal>
       </section>
     </div>
   );
