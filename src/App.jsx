@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
 
 const DelayedAction = () => {
@@ -8,6 +9,7 @@ const DelayedAction = () => {
   const [delayDuration, setDelayDuration] = useState(500);
   const [text, setText] = useState("");
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const handleButtonClick = () => {
     const words = text.split(" ");
@@ -42,6 +44,31 @@ const DelayedAction = () => {
   };
   const Wpm = Math.round(60000 / delayDuration);
 
+
+  function openModal() {
+    setIsOpen(true);
+    handleButtonClick(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+  Modal.setAppElement('#root');
   return (
     <div className="Container">
       <section className="Container__left">
@@ -106,12 +133,24 @@ const DelayedAction = () => {
             <p className="Wpm-display">Words Per minute: {Wpm}</p>
           </div>
         </section>
-        <Link to="/RSVP">
+        {/* <Link to="/RSVP"> */}
         <div className="RSVP--button--Container">
           <button className="RSVP--button" onClick={handleButtonClick}>Start Reading</button>
         </div>
-        </Link>
+        {/* </Link> */}
           <h1>{actionStatus}</h1>
+            <button onClick={openModal}>Test</button>
+        <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <div>I am a modal</div>
+            <h1>{actionStatus}</h1>
+      </Modal>
+          
         {/* NEED TO SEND THIS  H1 as a prop to the Rsvp component to where we can read its content there */}
       </section>
     </div>
