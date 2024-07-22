@@ -14,7 +14,7 @@ const DelayedAction = () => {
 
     words.forEach((word, index) => {
       setTimeout(() => {
-        setActionStatus(word);
+      setActionStatus(word);
       }, delayDuration * (index + 1));
     });
   };
@@ -50,7 +50,7 @@ const DelayedAction = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  
+
   return (
     <div className="Container">
       <section className="Container__left">
@@ -76,9 +76,9 @@ const DelayedAction = () => {
             cols={60}
             placeholder="paste or upload file to RSVP read"
           />
+          {/* FIXME: value does not do anything */}
           <input type="file" accept=".doc, .docx, .pdf" />{" "}
-          {/*This uploader does nothing currently 
-            Change button to be more sleek */}
+          
         </div>
         <h3 className="">Set WPM</h3>
         <section className="Wpm__selectors">
@@ -120,7 +120,7 @@ const DelayedAction = () => {
             Start Reading
           </button>
         </div>
-
+      {/* TODO: CSS of Modal */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

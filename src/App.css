@@ -78,7 +78,7 @@
 
 
 /* Default styles (for larger screens by default) */
-
+/* TODO: Media Queries */
 /* Smartphones */
 @media only screen and (max-width: 600px) {
   /* Styles for smartphones */
