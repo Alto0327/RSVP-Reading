@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { useResponsiveJSX } from "./useResponsive";
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -8,6 +9,8 @@ const DelayedAction = () => {
   const [text, setText] = useState("");
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
+  
+  const breakpoint = useResponsiveJSX([640, 768, 1440])
 
   const handleButtonClick = () => {
     const words = text.split(" ");
@@ -51,9 +54,15 @@ const DelayedAction = () => {
     setIsOpen(false);
   }
 
+
   return (
     <div className="Container">
       <section className="Container__left">
+        {/* FIXME: better to use Css due to JS using more device memory */}
+        {breakpoint === 0 && <div>Mobile</div>}
+        {breakpoint === 1 && <div>Tablet</div>}
+        {breakpoint === 2 && <div>Desktop</div>}
+        {breakpoint === 3 && <div>Desktop</div>}
         <h1 className="Title">
           RSVP <br />
           Reading
@@ -120,7 +129,11 @@ const DelayedAction = () => {
             Start Reading
           </button>
         </div>
+
+
+
       {/* TODO: CSS of Modal */}
+      {/* TODO: Make into a google extension as well  */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
