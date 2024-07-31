@@ -9,13 +9,13 @@ const DelayedAction = () => {
   const [text, setText] = useState("");
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
-  // const {darkMode, toggleDarkMode} = useContext(DarkModeContext)
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
-  // const themeSet= ()=>{
-  //   toggleDarkMode();
-  //   console.log('theme changed')
-  // }
+  const themeSet = () => {
+    event.preventDefault();
+    toggleDarkMode();
+    console.log("theme changed");
+  };
 
   const handleButtonClick = () => {
     const words = text.split(" ");
@@ -59,10 +59,12 @@ const DelayedAction = () => {
     setIsOpen(false);
   }
 
-
-
   return (
-    <div className= {darkMode ? 'Container Container-dark' : 'Container Container-light'}>
+    <div
+      className={
+        darkMode ? "Container Container-dark" : "Container Container-light"
+      }
+    >
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -119,7 +121,7 @@ const DelayedAction = () => {
           <div className="Slider-div">
             <p>Manually set:</p>
             <input
-              className="Wpm-slider"
+              className={darkMode ? "Wpm-slider Wpm-slider-dark" : "Wpm-slider"}
               type="range"
               min="100"
               max="1000"
@@ -135,10 +137,10 @@ const DelayedAction = () => {
           </button>
         </div>
 
-        {/* FIXME: can press on sample multiple times and cause it to play over anf over again */}
-        {/* TODO: Make it so that you can pause sample on click and user version by pressing pause */}
-        {/* TODO: CSS of Modal */}
-        {/* TODO: Make into a google extension as well  */}
+        {/* FIXME: can press on sample multiple times and cause it to play over anf over again 
+        TODO: Make it so that you can pause sample on click and user version by pressing pause 
+        TODO: CSS of Modal 
+        TODO: Make into a google extension as well  */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -148,13 +150,17 @@ const DelayedAction = () => {
           <h1>{actionStatus}</h1>
         </Modal>
       </section>
-      {/* TODO: ADD dark mode */}
-      {/* <div class="toggle-switch" onClick={themeSet}>
-        <label class="switch-label">
-          <input type="checkbox" class="checkbox" />
-          <span class="slider"></span>
+
+{/* TODO: Add animation to cause dark mode to expand from the button 
+    TODO: Change background Color of Button and Textarea to better suit DarkMode
+*/}
+
+      <div className="toggle-switch" onClick={themeSet}>
+        <label className="switch-label">
+          <input type="checkbox" className="checkbox" />
+          <span className="slider"></span>
         </label>
-      </div> */}
+      </div>
     </div>
   );
 };

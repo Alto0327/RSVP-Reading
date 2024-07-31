@@ -7,8 +7,8 @@
 }
 
 .Container-dark{
-  background-color: #482c3d;
-  color: #dfd9d9;
+  background-color: #251720;
+  color: #cac9ca;
 }
 
 .Container-light{
@@ -81,6 +81,10 @@ input::file-selector-button {
   accent-color: #482c3d;
 }
 
+.Wpm-slider-dark{
+  accent-color: #e1dee3;
+}
+
 .Wpm-select {
   width: 50%;
   border: 0.1rem solid #482c3d;
@@ -89,12 +93,6 @@ input::file-selector-button {
   color: #482c3d;
   cursor: pointer;
   background-color: #f0f2ef;
-}
-
-.Wpm-select select {
-  display: block;
-  color: #482c3d;
-  background-color: red;
 }
 
 .RSVP--button--Container {
