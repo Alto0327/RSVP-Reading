@@ -12,7 +12,9 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #f0f2ef;
+  color: #482C3D;
+  font-family: "Raleway", sans-serif;
 }
 
 

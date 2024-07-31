@@ -1,7 +1,7 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "react-modal";
-import { useResponsiveJSX } from "./useResponsive";
+import { DarkModeContext } from "./components/ThemeContext";
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -9,15 +9,20 @@ const DelayedAction = () => {
   const [text, setText] = useState("");
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
-  
-  const breakpoint = useResponsiveJSX([640, 768, 1440])
+  // const {darkMode, toggleDarkMode} = useContext(DarkModeContext)
+  const {darkMode} = useContext(DarkModeContext);
+
+  // const themeSet= ()=>{
+  //   toggleDarkMode();
+  //   console.log('theme changed')
+  // }
 
   const handleButtonClick = () => {
     const words = text.split(" ");
 
     words.forEach((word, index) => {
       setTimeout(() => {
-      setActionStatus(word);
+        setActionStatus(word);
       }, delayDuration * (index + 1));
     });
   };
@@ -55,14 +60,10 @@ const DelayedAction = () => {
   }
 
 
+
   return (
-    <div className="Container">
+    <div className= {darkMode ? 'Container Container-dark' : 'Container Container-light'}>
       <section className="Container__left">
-        {/* FIXME: better to use Css due to JS using more device memory */}
-        {breakpoint === 0 && <div>Mobile</div>}
-        {breakpoint === 1 && <div>Tablet</div>}
-        {breakpoint === 2 && <div>Desktop</div>}
-        {breakpoint === 3 && <div>Desktop</div>}
         <h1 className="Title">
           RSVP <br />
           Reading
@@ -84,10 +85,14 @@ const DelayedAction = () => {
             rows={10}
             cols={60}
             placeholder="paste or upload file to RSVP read"
+            className="Textarea"
           />
           {/* FIXME: value does not do anything */}
-          <input type="file" accept=".doc, .docx, .pdf" />{" "}
-          
+          <input
+            type="file"
+            accept=".doc, .docx, .pdf"
+            className="file-upload"
+          />
         </div>
         <h3 className="">Set WPM</h3>
         <section className="Wpm__selectors">
@@ -111,7 +116,7 @@ const DelayedAction = () => {
             </select>
           </div>
 
-          <div>
+          <div className="Slider-div">
             <p>Manually set:</p>
             <input
               className="Wpm-slider"
@@ -130,10 +135,10 @@ const DelayedAction = () => {
           </button>
         </div>
 
-
-
-      {/* TODO: CSS of Modal */}
-      {/* TODO: Make into a google extension as well  */}
+        {/* FIXME: can press on sample multiple times and cause it to play over anf over again */}
+        {/* TODO: Make it so that you can pause sample on click and user version by pressing pause */}
+        {/* TODO: CSS of Modal */}
+        {/* TODO: Make into a google extension as well  */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -142,8 +147,14 @@ const DelayedAction = () => {
         >
           <h1>{actionStatus}</h1>
         </Modal>
-
       </section>
+      {/* TODO: ADD dark mode */}
+      {/* <div class="toggle-switch" onClick={themeSet}>
+        <label class="switch-label">
+          <input type="checkbox" class="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div> */}
     </div>
   );
 };
