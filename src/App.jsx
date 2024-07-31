@@ -154,7 +154,7 @@ const DelayedAction = () => {
 {/* TODO: Add animation to cause dark mode to expand from the button 
     TODO: Change background Color of Button and Textarea to better suit DarkMode
 */}
-
+    {/* FIXME: icon doesn't change during toggles */}
       <div className="toggle-switch" onClick={themeSet}>
         <label className="switch-label">
           <input type="checkbox" className="checkbox" />
