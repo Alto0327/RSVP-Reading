@@ -9,12 +9,14 @@ const DelayedAction = () => {
   const [text, setText] = useState("");
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const themeSet = () => {
     event.preventDefault();
     toggleDarkMode();
-    console.log("theme changed");
+    setIsChecked(!isChecked);
   };
 
   const handleButtonClick = () => {
@@ -151,13 +153,16 @@ const DelayedAction = () => {
         </Modal>
       </section>
 
-{/* TODO: Add animation to cause dark mode to expand from the button 
-    TODO: Change background Color of Button and Textarea to better suit DarkMode
-*/}
-    {/* FIXME: icon doesn't change during toggles */}
+      {/* TODO: Change background Color of Button and Textarea to better suit DarkMode */}
+
       <div className="toggle-switch" onClick={themeSet}>
         <label className="switch-label">
-          <input type="checkbox" className="checkbox" />
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={isChecked}
+            onChange={themeSet}
+          />
           <span className="slider"></span>
         </label>
       </div>
