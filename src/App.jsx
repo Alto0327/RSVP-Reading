@@ -16,7 +16,8 @@ const DelayedAction = () => {
   const openModal = () => {
     setIsOpen(true);
     // TODO: need to Add a Var/ function to run the scaned PDF & a way to know whether to read text typed or scanned
-    readText(true);
+      readText(true);
+
 
   }
 
@@ -31,7 +32,13 @@ const DelayedAction = () => {
   };
 
   const readText = () => {
-    const words = text.split(" ");
+    let words = " "
+    if (fileText == null){
+      words = text.split(" ");
+    }
+    else{
+      words = fileText.split(" ")
+    }
     words.push(" ")
 
     words.forEach((word, index) => {
@@ -60,16 +67,32 @@ const DelayedAction = () => {
     });
   };
 
-  // FIXME: FUNCTION NOT WORKING
-  // required to extract pdfText from function and use it to display on modal & error is not defined
+
+  let fileText = null;
+
   function extractText(event) {
-    const file = event.target.files[0]
-    pdfToText(file)
-        .then(pdfText)
-        .catch(error => console.error("Failed to extract text from pdf"))
-    return pdfText
+    const file = event.target.files[0];
+  
+    return pdfToText(file)
+      .then((pdfText) => {
+        fileText = pdfText; // Assign the text to fileText
+        return fileText; // Return the text so it can be used by the caller
+      })
+      .catch((error) => {
+        console.error("Failed to extract text from pdf", error);
+        return null; // Return null in case of an error
+      });
+  }
+
+  // Assuming this function is triggered by an event, such as a file input change
+  const handleFileChange = (event) => {
+    extractText(event).then((fileText) => {
+      if (fileText) {
+        console.log(fileText); 
       }
-// console.log(extractText(pdfText))
+    });
+  }
+
 
 
   const Wpm = Math.round(60000 / delayDuration);
@@ -112,7 +135,7 @@ const DelayedAction = () => {
           {/* FIXME: value does not do anything */}
           <input
             type="file"
-            accept="application/pdf" onChange={extractText}
+            accept="application/pdf" onChange={handleFileChange}
             className="file-upload"
           />
         </div>
@@ -165,6 +188,7 @@ const DelayedAction = () => {
           onRequestClose={closeModal}
           className="Modal"
           contentLabel="RSVP Reader"
+          ariaHideApp={false}
         >
           <h1>{actionStatus}</h1>
         </Modal>
