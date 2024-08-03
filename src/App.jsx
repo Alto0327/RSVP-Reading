@@ -110,9 +110,27 @@ const DelayedAction = () => {
       }
     >
       <div className="Logo-div">
-        <img className={darkMode ? "Logo Logo-darkMode" : "Logo" } src={LogoWhite} alt="Dark Mode Logo"/>
-        <img className="Logo" src={LogoDark} alt="Default Logo" />
+        <div className="item">
+          <a href="#" className="link">
+            <span>
+              <img className={darkMode ? "Logo Logo-darkMode" : "Logo" } src={LogoWhite} alt="Dark Mode Logo"/>
+              <img className="Logo" src={LogoDark} alt="Default Logo" />
+            </span>
+          </a>
+          <div className="submenu">
+            <div className="submenu-item">
+              <a href="https://github.com/Alto0327" target="_blank" className="submenu-link">GitHub</a>
+            </div>
+            <div className="submenu-item">
+              <a href="#" className="submenu-link">Linkedin</a>
+            </div>
+            <div className="submenu-item">
+              <a href="#" className="submenu-link">My Portfolio</a>
+            </div>
+          </div>
+        </div>
       </div>
+
     {/* TODO: Add logo on top Left of screen */}
     {/* TODO: Make into a google extension as well  */}
     {/* TODO: FOOTER */}
