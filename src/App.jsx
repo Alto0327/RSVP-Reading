@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
+import pdfToText from 'react-pdftotext'
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -10,8 +11,18 @@ const DelayedAction = () => {
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
+  const openModal = () => {
+    setIsOpen(true);
+    // TODO: need to Add a Var/ function to run the scaned PDF & a way to know whether to read text typed or scanned
+    readText(true);
+
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
 
   const themeSet = () => {
     event.preventDefault();
@@ -36,9 +47,6 @@ const DelayedAction = () => {
       setDelayDuration(Math.round(60000 / newWPM));
     }
   };
-  const sampleStart = "You are Reading this at 140 words per minutes! ";
-  const sample =
-    "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   const handleSampleClick = () => {
     const sampleSet = sampleStart.concat(sample);
@@ -51,16 +59,23 @@ const DelayedAction = () => {
       }, 420 * (index + 1));
     });
   };
+
+  // FIXME: FUNCTION NOT WORKING
+  // required to extract pdfText from function and use it to display on modal & error is not defined
+  function extractText(event) {
+    const file = event.target.files[0]
+    pdfToText(file)
+        .then(pdfText)
+        .catch(error => console.error("Failed to extract text from pdf"))
+    return pdfText
+      }
+// console.log(extractText(pdfText))
+
+
   const Wpm = Math.round(60000 / delayDuration);
-
-  const openModal = () => {
-    setIsOpen(true);
-    readText(true);
-  }
-
-  const closeModal = () => {
-    setIsOpen(false);
-  }
+  const sampleStart = "You are Reading this at 140 words per minutes! ";
+  const sample =
+    "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   return (
     <div
@@ -97,7 +112,7 @@ const DelayedAction = () => {
           {/* FIXME: value does not do anything */}
           <input
             type="file"
-            accept=".doc, .docx, .pdf"
+            accept="application/pdf" onChange={extractText}
             className="file-upload"
           />
         </div>
