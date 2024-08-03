@@ -56,6 +56,17 @@
   font-size: 7rem;
   line-height: 0.9;
 }
+.Logo{
+  position: fixed;
+  top: 1px;
+  left: 15px;
+  width: 5rem;
+  height: 5rem;
+}
+
+.Logo-darkMode{
+  z-index: 1;
+}
 
 .Description {
   display: flex;

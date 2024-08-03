@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
 import pdfToText from 'react-pdftotext'
+import LogoDark from "./assets/Logo-Dark.png"
+import LogoWhite from "./assets/Logo-White.png"
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -29,6 +31,7 @@ const DelayedAction = () => {
     event.preventDefault();
     toggleDarkMode();
     setIsChecked(!isChecked);
+
   };
 
   const readText = () => {
@@ -72,7 +75,7 @@ const DelayedAction = () => {
 
   function extractText(event) {
     const file = event.target.files[0];
-  
+
     return pdfToText(file)
       .then((pdfText) => {
         fileText = pdfText; // Assign the text to fileText
@@ -88,7 +91,7 @@ const DelayedAction = () => {
   const handleFileChange = (event) => {
     extractText(event).then((fileText) => {
       if (fileText) {
-        console.log(fileText); 
+        console.log(fileText);
       }
     });
   }
@@ -106,8 +109,13 @@ const DelayedAction = () => {
         darkMode ? "Container Container-dark" : "Container Container-light"
       }
     >
+      <div className="Logo-div">
+        <img className={darkMode ? "Logo Logo-darkMode" : "Logo" } src={LogoWhite} alt="Dark Mode Logo"/>
+        <img className="Logo" src={LogoDark} alt="Default Logo" />
+      </div>
     {/* TODO: Add logo on top Left of screen */}
     {/* TODO: Make into a google extension as well  */}
+    {/* TODO: FOOTER */}
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -132,7 +140,6 @@ const DelayedAction = () => {
             placeholder="paste or upload file to RSVP read"
             className="Textarea"
             />
-          {/* FIXME: value does not do anything */}
           <input
             type="file"
             accept="application/pdf" onChange={handleFileChange}
@@ -193,8 +200,6 @@ const DelayedAction = () => {
           <h1>{actionStatus}</h1>
         </Modal>
       </section>
-
-      {/* TODO: Change background Color of Button and Textarea to better suit DarkMode */}
 
       <div className="toggle-switch" onClick={themeSet}>
         <label className="switch-label">
