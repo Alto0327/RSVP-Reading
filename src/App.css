@@ -1,3 +1,9 @@
+:root{
+  --dark:#482c3d;
+  --light:#f0f2ef;
+}
+
+
 @keyframes expandDark {
   0% {
     clip-path: circle(0% at top right);
@@ -23,28 +29,27 @@
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  overflow: hidden;
-  transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.4s ease-in-out;
 }
 
 .Container-dark{
-  background-color: #251720;
+  background-color: var(--dark);
   color: #cac9ca;
   animation: expandDark 0.2s forwards;
 }
 
 .Container-light {
-  background-color: #f0f2ef;
-  color: #482c3d;
+  background-color: var(--light);
+  color: var(--dark);
   animation: expandLight 0.2s backwards;
 }
 
 .Container__left {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 30rem;
   gap: 4rem;
-  margin-top: -15rem;
 }
 
 .Container__left h1 {
@@ -86,8 +91,9 @@
 .file-upload {
   padding-top: 1rem;
 }
+
 input::file-selector-button {
-  border: 0.1rem solid #482c3d;
+  border: 1px solid var(--dark);
   font-size: 0.8rem;
   width: 7em;
   border-radius: 1rem;
@@ -101,7 +107,7 @@ input::file-selector-button {
   padding-bottom: 1rem;
 }
 .Wpm-slider {
-  accent-color: #482c3d;
+  accent-color: var(--dark);
 }
 
 .Wpm-slider-dark{
@@ -110,12 +116,12 @@ input::file-selector-button {
 
 .Wpm-select {
   width: 50%;
-  border: 0.1rem solid #482c3d;
+  border: 1px solid var(--dark);
   font-size: 0.9rem;
   border-radius: 1rem;
   color: #482c3d;
   cursor: pointer;
-  background-color: #f0f2ef;
+  background-color: var(--light);
 }
 
 .RSVP--button--Container {
@@ -130,7 +136,7 @@ input::file-selector-button {
   font-size: 1rem;
   width: 10em;
   border-radius: 1rem;
-  color: #482c3d;
+  color: var(--dark);
   box-shadow: 0 0.4rem #dfd9d9;
   cursor: pointer;
 }
@@ -157,8 +163,6 @@ input::file-selector-button {
   right: 10px;
   width: 3rem;
   height: 1rem;
-  --light: #d8dbe0;
-  --dark: #251720;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
 }
@@ -225,7 +229,7 @@ input::file-selector-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b6b6b6;
+  background-color: inherit ;
 }
 
 /* Default styles (for larger screens by default) */
