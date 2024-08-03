@@ -17,5 +17,6 @@ body {
 
 textarea{
   resize: none;
+  padding: 1rem;
 }
 

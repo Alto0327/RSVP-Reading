@@ -19,8 +19,9 @@ const DelayedAction = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleButtonClick = () => {
+  const readText = () => {
     const words = text.split(" ");
+    words.push(" ")
 
     words.forEach((word, index) => {
       setTimeout(() => {
@@ -52,12 +53,12 @@ const DelayedAction = () => {
   };
   const Wpm = Math.round(60000 / delayDuration);
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-    handleButtonClick(true);
+    readText(true);
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
   }
 
@@ -67,6 +68,8 @@ const DelayedAction = () => {
         darkMode ? "Container Container-dark" : "Container Container-light"
       }
     >
+    {/* TODO: Add logo on top Left of screen */}
+    {/* TODO: Make into a google extension as well  */}
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -90,7 +93,7 @@ const DelayedAction = () => {
             cols={60}
             placeholder="paste or upload file to RSVP read"
             className="Textarea"
-          />
+            />
           {/* FIXME: value does not do anything */}
           <input
             type="file"
@@ -139,10 +142,9 @@ const DelayedAction = () => {
           </button>
         </div>
 
-        {/* FIXME: can press on sample multiple times and cause it to play over anf over again 
-        TODO: Make it so that you can pause sample on click and user version by pressing pause 
-        TODO: CSS of Modal 
-        TODO: Make into a google extension as well  */}
+        {/* FIXME: can press on sample multiple times and cause it to play over anf over again
+          TODO: Make it so that you can pause sample on click and user version by pressing pause
+          TODO: CSS of Modal */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
