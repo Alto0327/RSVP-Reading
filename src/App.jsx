@@ -2,9 +2,9 @@ import "./App.css";
 import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
-import pdfToText from 'react-pdftotext'
-import LogoDark from "./assets/Logo-Dark.png"
-import LogoWhite from "./assets/Logo-White.png"
+
+import LogoDark from "./assets/Logo-Dark.png";
+import LogoWhite from "./assets/Logo-White.png";
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -17,32 +17,28 @@ const DelayedAction = () => {
 
   const openModal = () => {
     setIsOpen(true);
-    // TODO: need to Add a Var/ function to run the scaned PDF & a way to know whether to read text typed or scanned
-      readText(true);
-
-
-  }
+    // TODO: need to Add a Var/ function to run the scanned PDF & a way to know whether to read text typed or scanned
+    readText(true);
+  };
 
   const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   const themeSet = () => {
     event.preventDefault();
     toggleDarkMode();
     setIsChecked(!isChecked);
-
   };
 
   const readText = () => {
-    let words = " "
-    if (fileText == null){
+    let words = " ";
+    if (fileText == null) {
       words = text.split(" ");
+    } else {
+      words = fileText.split(" ");
     }
-    else{
-      words = fileText.split(" ")
-    }
-    words.push(" ")
+    words.push(" ");
 
     words.forEach((word, index) => {
       setTimeout(() => {
@@ -70,7 +66,6 @@ const DelayedAction = () => {
     });
   };
 
-
   let fileText = null;
 
   function extractText(event) {
@@ -94,9 +89,7 @@ const DelayedAction = () => {
         console.log(fileText);
       }
     });
-  }
-
-
+  };
 
   const Wpm = Math.round(60000 / delayDuration);
   const sampleStart = "You are Reading this at 140 words per minutes! ";
@@ -113,27 +106,41 @@ const DelayedAction = () => {
         <div className="item">
           <a href="#" className="link">
             <span>
-              <img className={darkMode ? "Logo Logo-darkMode" : "Logo" } src={LogoWhite} alt="Dark Mode Logo"/>
+              <img
+                className={darkMode ? "Logo Logo-darkMode" : "Logo"}
+                src={LogoWhite}
+                alt="Dark Mode Logo"
+              />
               <img className="Logo" src={LogoDark} alt="Default Logo" />
             </span>
           </a>
-          <div className="submenu">
+          <div className={darkMode ? "submenu submenu-light" : "submenu "}>
             <div className="submenu-item">
-              <a href="https://github.com/Alto0327" target="_blank" className="submenu-link">GitHub</a>
+              <a
+                href="https://github.com/Alto0327"
+                target="_blank"
+                className="submenu-link"
+              >
+                GitHub
+              </a>
             </div>
             <div className="submenu-item">
-              <a href="#" className="submenu-link">Linkedin</a>
+              <a href="#" className="submenu-link">
+                Linkedin
+              </a>
             </div>
             <div className="submenu-item">
-              <a href="#" className="submenu-link">My Portfolio</a>
+              <a href="#" className="submenu-link">
+                My Portfolio
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-    {/* TODO: Add logo on top Left of screen */}
-    {/* TODO: Make into a google extension as well  */}
-    {/* TODO: FOOTER */}
+      {/* TODO: Add logo on top Left of screen */}
+      {/* TODO: Make into a google extension as well  */}
+      {/* TODO: FOOTER */}
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -157,10 +164,11 @@ const DelayedAction = () => {
             cols={60}
             placeholder="paste or upload file to RSVP read"
             className="Textarea"
-            />
+          />
           <input
             type="file"
-            accept="application/pdf" onChange={handleFileChange}
+            accept="application/pdf"
+            onChange={handleFileChange}
             className="file-upload"
           />
         </div>

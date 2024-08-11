@@ -197,6 +197,10 @@
   color: var(--light);
 }
 
+.submenu-light{
+  background-color: var(--light);
+}
+
 .Description {
   display: flex;
   flex-direction: column;
