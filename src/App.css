@@ -111,7 +111,7 @@
 .Logo-div .link svg {
   width: 14px;
   height: 14px;
-  fill: #000000;
+  fill: #ff0000;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -383,12 +383,26 @@ input::file-selector-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 70vw;
+    font-size: 12px;
   }
+  .Container__left{
+    width: 60%;
+  }
+
+  .Container__right{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
 }
 
 /* High-Resolution Smartphones */
 @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (max-width: 600px) and (min-resolution: 192dpi) {
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
