@@ -1,8 +1,7 @@
-:root{
-  --dark:#482c3d;
-  --light:#f0f2ef;
+:root {
+  --dark: #482c3d;
+  --light: #f0f2ef;
 }
-
 
 @keyframes expandDark {
   0% {
@@ -32,7 +31,7 @@
   transition: background-color 0.3s ease-in-out, color 0.4s ease-in-out;
 }
 
-.Container-dark{
+.Container-dark {
   background-color: var(--dark);
   color: #cac9ca;
   animation: expandDark 0.2s forwards;
@@ -57,7 +56,8 @@
   line-height: 0.9;
 }
 
-.Logo-div, .Logo{
+.Logo-div,
+.Logo {
   position: fixed;
   top: 1px;
   left: 15px;
@@ -65,7 +65,7 @@
   height: 5rem;
 }
 
-.Logo-darkMode{
+.Logo-darkMode {
   z-index: 1;
 }
 
@@ -73,7 +73,6 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--dark);
-
 }
 
 .Logo-div a {
@@ -143,7 +142,7 @@
   transform: translateY(0);
   pointer-events: auto;
   border-top: transparent;
-  border-color: var(--dark)
+  border-color: var(--dark);
 }
 
 .Logo-div .item:hover .link {
@@ -197,7 +196,7 @@
   color: var(--light);
 }
 
-.submenu-light{
+.submenu-light {
   background-color: var(--light);
 }
 
@@ -254,7 +253,7 @@ input::file-selector-button {
   accent-color: var(--dark);
 }
 
-.Wpm-slider-dark{
+.Wpm-slider-dark {
   accent-color: #e1dee3;
 }
 
@@ -322,7 +321,6 @@ input::file-selector-button {
   transition: background-color 0.3s;
 }
 
-
 .checkbox {
   position: absolute;
   display: none;
@@ -337,7 +335,6 @@ input::file-selector-button {
   transition: 0.3s;
 }
 
-
 .slider::before {
   content: "";
   position: absolute;
@@ -351,7 +348,6 @@ input::file-selector-button {
   background-color: var(--dark);
   -webkit-transition: 0.3s;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-
 }
 
 .checkbox:checked ~ .slider {
@@ -373,7 +369,7 @@ input::file-selector-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: inherit ;
+  background-color: inherit;
 }
 
 /* Default styles (for larger screens by default) */
@@ -393,7 +389,6 @@ input::file-selector-button {
 /* High-Resolution Smartphones */
 @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (max-width: 600px) and (min-resolution: 192dpi) {
-
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
