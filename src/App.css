@@ -108,16 +108,6 @@
   transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.Logo-div .link svg {
-  width: 14px;
-  height: 14px;
-  fill: #ff0000;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.Logo-div .item {
-  position: relative;
-}
 
 .Logo-div .item .submenu {
   display: flex;
@@ -196,9 +186,12 @@
   color: var(--light);
 }
 
-.submenu-light {
+.submenu-dark {
   background-color: var(--light);
+  border: 0.5px solid var(--light);
+
 }
+
 
 .Description {
   display: flex;
@@ -372,6 +365,28 @@ input::file-selector-button {
   background-color: inherit;
 }
 
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  text-align: center;
+  width: 80vw;
+  font-size: 1rem;
+  font-weight: 600;
+  border-top: .5px solid var(--dark);
+  color: var(--dark);
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+
+.footer-dark{
+  color: var(--light);
+  border-top: .5px solid var(--light);
+}
+
 /* Default styles (for larger screens by default) */
 /* TODO: Media Queries */
 /* FIXME: Media queries */
@@ -389,13 +404,15 @@ input::file-selector-button {
   .Container__left{
     width: 60%;
   }
+  .Container__left h1{
+    font-size: 4rem;
+  }
 
   .Container__right{
     width: 40%;
     display: flex;
     justify-content: flex-end;
   }
-  
 
 }
 

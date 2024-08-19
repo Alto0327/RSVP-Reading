@@ -2,7 +2,6 @@ import "./App.css";
 import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
-
 import LogoDark from "./assets/Logo-Dark.png";
 import LogoWhite from "./assets/Logo-White.png";
 
@@ -97,6 +96,7 @@ const DelayedAction = () => {
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   return (
+    // FIXME: PDF TO TEXT DOESNT WORK
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
@@ -114,7 +114,7 @@ const DelayedAction = () => {
               <img className="Logo" src={LogoDark} alt="Default Logo" />
             </span>
           </a>
-          <div className={darkMode ? "submenu submenu-light" : "submenu "}>
+          <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
             <div className="submenu-item">
               <a
                 href="https://github.com/Alto0327"
@@ -138,7 +138,6 @@ const DelayedAction = () => {
         </div>
       </div>
 
-      {/* TODO: Add logo on top Left of screen */}
       {/* TODO: Make into a google extension as well  */}
       {/* TODO: FOOTER */}
       <section className="Container__left">
@@ -238,6 +237,14 @@ const DelayedAction = () => {
           <span className="slider"></span>
         </label>
       </div>
+      <footer>
+        <div className={darkMode? "footer footer-dark" : "footer"}>
+
+        <p >
+          Aldo Fonseca 2024
+        </p>
+        </div>
+      </footer>
     </div>
   );
 };
