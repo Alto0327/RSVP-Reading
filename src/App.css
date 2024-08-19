@@ -108,7 +108,6 @@
   transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-
 .Logo-div .item .submenu {
   display: flex;
   flex-direction: column;
@@ -189,9 +188,7 @@
 .submenu-dark {
   background-color: var(--light);
   border: 0.5px solid var(--light);
-
 }
-
 
 .Description {
   display: flex;
@@ -365,8 +362,7 @@ input::file-selector-button {
   background-color: inherit;
 }
 
-
-.footer{
+.footer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -376,15 +372,15 @@ input::file-selector-button {
   width: 80vw;
   font-size: 1rem;
   font-weight: 600;
-  border-top: .5px solid var(--dark);
+  border-top: 0.5px solid var(--dark);
   color: var(--dark);
   padding-top: 8px;
   padding-bottom: 6px;
 }
 
-.footer-dark{
+.footer-dark {
   color: var(--light);
-  border-top: .5px solid var(--light);
+  border-top: 0.5px solid var(--light);
 }
 
 /* Default styles (for larger screens by default) */
@@ -402,40 +398,40 @@ input::file-selector-button {
     font-size: 12px;
     height: 90%;
   }
-  .Container__left{
+  .Container__left {
     width: 80%;
     padding-top: 10vh;
   }
-  .Container__left h1{
+  .Container__left h1 {
     font-size: 4rem;
     margin-bottom: -3.5rem;
   }
 
-  .Container__right{
-   margin-right: 10vw;
-   margin-left: 10vw;
-   width: 80vw;
-   padding-top: 1rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  .Container__right {
+    margin-right: 10vw;
+    margin-left: 10vw;
+    width: 80vw;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .Textarea{
+  .Textarea {
     width: 100%;
     margin-bottom: 1rem;
   }
-  
-  .Sample-rsvp, .file-upload, .footer{
+
+  .Sample-rsvp,
+  .file-upload,
+  .footer {
     display: none;
   }
-
 }
 
 /* High-Resolution Smartphones */
 @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (max-width: 600px) and (min-resolution: 192dpi) {
-
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -456,7 +452,6 @@ input::file-selector-button {
   .file-upload {
     display: none;
   }
-
 }
 
 /* High-Resolution Tablets */

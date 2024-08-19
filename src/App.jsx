@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
 import LogoDark from "./assets/Logo-Dark.png";
 import LogoWhite from "./assets/Logo-White.png";
-import pdfToText from 'react-pdftotext'
+import pdfToText from "react-pdftotext";
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -237,11 +237,8 @@ const DelayedAction = () => {
         </label>
       </div>
       <footer>
-        <div className={darkMode? "footer footer-dark" : "footer"}>
-
-        <p >
-          Aldo Fonseca 2024
-        </p>
+        <div className={darkMode ? "footer footer-dark" : "footer"}>
+          <p>Aldo Fonseca 2024</p>
         </div>
       </footer>
     </div>
