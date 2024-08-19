@@ -97,6 +97,7 @@ const DelayedAction = () => {
 
   return (
     // FIXME: MEDIA QUERIES ARENT PROPER ON IPHONE
+    // FIXME: DropDown goes onto Title on desktop and Required to be hamburger menu for smaller Media queries
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
