@@ -96,6 +96,7 @@ const DelayedAction = () => {
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   return (
+    // FIXME: MEDIA QUERIES ARENT PROPER ON IPHONE
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"

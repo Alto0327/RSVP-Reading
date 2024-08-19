@@ -389,7 +389,7 @@ input::file-selector-button {
 
 /* Default styles (for larger screens by default) */
 /* TODO: Media Queries */
-/* FIXME: Media queries */
+/* FIXME: Media queries ARENT SHOWING NICE ON IPHONE */
 /* Smartphones */
 @media only screen and (max-width: 600px) {
   /* Styles for smartphones */
@@ -400,6 +400,7 @@ input::file-selector-button {
     align-items: center;
     width: 70vw;
     font-size: 12px;
+    height: 90%;
   }
   .Container__left{
     width: 80%;
@@ -425,7 +426,7 @@ input::file-selector-button {
     margin-bottom: 1rem;
   }
   
-  .Sample-rsvp, .file-upload{
+  .Sample-rsvp, .file-upload, .footer{
     display: none;
   }
 
@@ -455,6 +456,7 @@ input::file-selector-button {
   .file-upload {
     display: none;
   }
+
 }
 
 /* High-Resolution Tablets */
