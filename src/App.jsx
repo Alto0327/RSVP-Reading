@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
 import LogoDark from "./assets/Logo-Dark.png";
 import LogoWhite from "./assets/Logo-White.png";
+import pdfToText from 'react-pdftotext'
 
 const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
@@ -16,7 +17,6 @@ const DelayedAction = () => {
 
   const openModal = () => {
     setIsOpen(true);
-    // TODO: need to Add a Var/ function to run the scanned PDF & a way to know whether to read text typed or scanned
     readText(true);
   };
 
@@ -96,7 +96,6 @@ const DelayedAction = () => {
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   return (
-    // FIXME: PDF TO TEXT DOESNT WORK
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
@@ -139,7 +138,6 @@ const DelayedAction = () => {
       </div>
 
       {/* TODO: Make into a google extension as well  */}
-      {/* TODO: FOOTER */}
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -161,7 +159,7 @@ const DelayedAction = () => {
             onChange={(event) => setText(event.target.value)}
             rows={10}
             cols={60}
-            placeholder="paste or upload file to RSVP read"
+            placeholder="Type or upload file to RSVP read"
             className="Textarea"
           />
           <input

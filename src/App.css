@@ -402,16 +402,31 @@ input::file-selector-button {
     font-size: 12px;
   }
   .Container__left{
-    width: 60%;
+    width: 80%;
+    padding-top: 10vh;
   }
   .Container__left h1{
     font-size: 4rem;
+    margin-bottom: -3.5rem;
   }
 
   .Container__right{
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
+   margin-right: 10vw;
+   margin-left: 10vw;
+   width: 80vw;
+   padding-top: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .Textarea{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .Sample-rsvp, .file-upload{
+    display: none;
   }
 
 }
