@@ -462,7 +462,10 @@ input::file-selector-button {
   .RSVP--button--Container{
     justify-content: flex-end;
     width: 100%;
-    margin-top: -2.8rem;
+    margin-top: -2.8rem; 
+  }
+  .RSVP--button{
+    z-index: 100;
   }
 
 
