@@ -401,7 +401,7 @@ input::file-selector-button {
   }
   .Container__left {
     width: 80%;
-    padding-top: 10vh;
+    padding-top: 1vh;
   }
   .Container__left h1 {
     font-size: 4rem;
