@@ -99,50 +99,64 @@ const DelayedAction = () => {
     // FIXME: TODO: Refactor HTML Layout Elements ON another branch
     // FIXME: MEDIA QUERIES ARENT PROPER ON IPHONE
     // FIXME: DropDown goes onto Title on desktop and Required to be hamburger menu for smaller Media queries
-    
+    // TODO: Make into a google extension as well  
     //test branch
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
       }
     >
-      <div className="Logo-div">
-        <div className="item">
-          <a href="#" className="link">
-            <span>
-              <img
-                className={darkMode ? "Logo Logo-darkMode" : "Logo"}
-                src={LogoWhite}
-                alt="Dark Mode Logo"
-              />
-              <img className="Logo" src={LogoDark} alt="Default Logo" />
-            </span>
-          </a>
-          <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
-            <div className="submenu-item">
-              <a
-                href="https://github.com/Alto0327"
-                target="_blank"
-                className="submenu-link"
-              >
-                GitHub
+      <header className="header">
+        <nav>
+          <div className="Logo-div">
+            <div className="item">
+              <a href="#" className="link">
+                <span>
+                  <img
+                    className={darkMode ? "Logo Logo-darkMode" : "Logo"}
+                    src={LogoWhite}
+                    alt="Dark Mode Logo"
+                  />
+                  <img className="Logo" src={LogoDark} alt="Default Logo" />
+                </span>
               </a>
-            </div>
-            <div className="submenu-item">
-              <a href="#" className="submenu-link">
-                Linkedin
-              </a>
-            </div>
-            <div className="submenu-item">
-              <a href="#" className="submenu-link">
-                My Portfolio
-              </a>
+              <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
+                <div className="submenu-item">
+                  <a
+                    href="https://github.com/Alto0327"
+                    target="_blank"
+                    className="submenu-link"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <div className="submenu-item">
+                  <a href="#" className="submenu-link">
+                    Linkedin
+                  </a>
+                </div>
+                <div className="submenu-item">
+                  <a href="#" className="submenu-link">
+                    My Portfolio
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </nav>
+        <div className="toggle-switch" onClick={themeSet}>
+        <label className="switch-label">
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={isChecked}
+            onChange={themeSet}
+            />
+            
+          <span className="slider"></span>
+        </label>
       </div>
-
-      {/* TODO: Make into a google extension as well  */}
+      </header>
       <section className="Container__left">
         <h1 className="Title">
           RSVP <br />
@@ -228,18 +242,6 @@ const DelayedAction = () => {
           <h1>{actionStatus}</h1>
         </Modal>
       </section>
-
-      <div className="toggle-switch" onClick={themeSet}>
-        <label className="switch-label">
-          <input
-            type="checkbox"
-            className="checkbox"
-            checked={isChecked}
-            onChange={themeSet}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
       <footer>
         <div className={darkMode ? "footer footer-dark" : "footer"}>
           <p>Aldo Fonseca 2024</p>
