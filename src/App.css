@@ -291,7 +291,7 @@ input::file-selector-button {
 }
 
 .toggle-switch {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
   width: 3rem;
@@ -428,6 +428,44 @@ input::file-selector-button {
   .footer {
     display: none;
   }
+
+  .toggle-switch{
+    right: 350px;
+  }
+
+  .Logo-div,
+.Logo {
+  position: fixed;
+  top: 1px;
+  left: 350px;
+  width: 4rem;
+  height: 4rem;
+}
+ 
+ .Slider-div{
+  display: none;
+ }
+ .wpm-selectors-text{
+  display: none;
+ }
+
+ .Wpm-select{
+  width: 5.7rem;
+ }
+ 
+ .Wpm__selectors, .Set_WPM {
+   justify-content: flex-start;
+   width: 100%;
+   z-index: 100;
+  }
+
+  .RSVP--button--Container{
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: -2.8rem;
+  }
+
+
 }
 
 /* High-Resolution Smartphones */
@@ -453,6 +491,8 @@ input::file-selector-button {
   .file-upload {
     display: none;
   }
+
+
 }
 
 /* High-Resolution Tablets */

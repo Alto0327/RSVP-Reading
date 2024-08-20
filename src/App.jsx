@@ -171,10 +171,10 @@ const DelayedAction = () => {
             className="file-upload"
           />
         </div>
-        <h3 className="">Set WPM</h3>
+        <h3 className="Set_WPM">Set WPM</h3>
         <section className="Wpm__selectors">
           <div>
-            <label>Select from Preset:</label>
+            <label className="wpm-selectors-text">Select from Preset:</label>
             <select
               value={Wpm}
               onChange={handleWpmChange}
