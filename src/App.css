@@ -40,25 +40,26 @@
 }
 /* vvvvv TODO: & FIXME: HEADER AND NAV vvvvv */
 .Container {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
   transition: background-color 0.3s ease-in-out, color 0.4s ease-in-out;
 }
 
 .Header{
+  padding: 12px 36px;
   height: 10vh;
   width: 100%;
   display: flex;
-  justify-content:flex-start;
+  justify-content:space-between;
   align-items: center;
 }
 
 .toggle-switch {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  
   width: 3rem;
-  height: 1rem;
+  height: 3rem;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
 }
@@ -67,6 +68,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex: 1;
 }
 
 .Main__left {
@@ -80,6 +82,21 @@
 .Main__right {
   display: flex;
   flex-direction: column;
+}
+
+
+.footer {
+  margin-top: 10vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  text-align: center;
+  width: 80vw;
+  font-size: 1rem;
+  font-weight: 600;
+  border-top: 0.5px solid var(--dark);
+  color: var(--dark);
+  padding-top: 8px;
+  padding-bottom: 6px;
 }
 
 /* ^^^^ TODO: & FIXME: HEADER AND NAV^^^^  */
@@ -127,7 +144,6 @@
   justify-content: center;
   height: 5rem;
   gap: 12px;
-  padding: 12px 36px;
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
@@ -231,8 +247,8 @@
 
 .switch-label {
   position: absolute;
-  width: 100%;
-  height: 46px;
+  width: 3rem;
+  height: 3rem;
   background-color: var(--dark);
   border-radius: 25px;
   cursor: pointer;
@@ -388,21 +404,7 @@ input::file-selector-button {
   background-color: inherit;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  text-align: center;
-  width: 80vw;
-  font-size: 1rem;
-  font-weight: 600;
-  border-top: 0.5px solid var(--dark);
-  color: var(--dark);
-  padding-top: 8px;
-  padding-bottom: 6px;
-}
+
 
 .footer-dark {
   color: var(--light);
