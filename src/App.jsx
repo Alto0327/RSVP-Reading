@@ -99,147 +99,159 @@ const DelayedAction = () => {
     // FIXME: TODO: Refactor HTML Layout Elements ON another branch
     // FIXME: MEDIA QUERIES ARENT PROPER ON IPHONE
     // FIXME: DropDown goes onto Title on desktop and Required to be hamburger menu for smaller Media queries
+    // TODO: Make into a google extension as well
+    //test branch
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
       }
     >
-      <div className="Logo-div">
-        <div className="item">
-          <a href="#" className="link">
-            <span>
-              <img
-                className={darkMode ? "Logo Logo-darkMode" : "Logo"}
-                src={LogoWhite}
-                alt="Dark Mode Logo"
-              />
-              <img className="Logo" src={LogoDark} alt="Default Logo" />
-            </span>
-          </a>
-          <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
-            <div className="submenu-item">
-              <a
-                href="https://github.com/Alto0327"
-                target="_blank"
-                className="submenu-link"
-              >
-                GitHub
+      <header className="Header">
+        <nav>
+          <div className="Logo-div">
+            <div className="item">
+              <a href="#" className="link">
+                <span>
+                  <img
+                    className="Logo Logo-darkMode"
+                    src={LogoWhite}
+                    alt="Dark Mode Logo"
+                  />
+                  <img
+                    className="Logo Logo-default"
+                    src={LogoDark}
+                    alt="Default Logo"
+                  />
+                </span>
               </a>
-            </div>
-            <div className="submenu-item">
-              <a href="#" className="submenu-link">
-                Linkedin
-              </a>
-            </div>
-            <div className="submenu-item">
-              <a href="#" className="submenu-link">
-                My Portfolio
-              </a>
+              <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
+                <div className="submenu-item">
+                  <a
+                    href="https://github.com/Alto0327"
+                    target="_blank"
+                    className="submenu-link"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <div className="submenu-item">
+                  <a href="#" className="submenu-link">
+                    Linkedin
+                  </a>
+                </div>
+                <div className="submenu-item">
+                  <a href="#" className="submenu-link">
+                    My Portfolio
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* TODO: Make into a google extension as well  */}
-      <section className="Container__left">
-        <h1 className="Title">
-          RSVP <br />
-          Reading
-        </h1>
-        <div className="Description">
-          <h2>Rapid Serial Visual Presentation</h2>
-          <p>{sample}</p>
-        </div>
-        <div className="Sample-rsvp">
-          <h2 onClick={handleSampleClick}>{sampleStatus}</h2>
-        </div>
-      </section>
-      <section className="Container__right">
-        <h2>Insert Text Here:</h2>
-        <div className="Wpm-textUpload">
-          <textarea
-            value={text}
-            onChange={(event) => setText(event.target.value)}
-            rows={10}
-            cols={60}
-            placeholder="Type or upload file to RSVP read"
-            className="Textarea"
-          />
-          <input
-            type="file"
-            accept="application/pdf"
-            onChange={handleFileChange}
-            className="file-upload"
-          />
-        </div>
-        <h3 className="Set_WPM">Set WPM</h3>
-        <section className="Wpm__selectors">
-          <div>
-            <label className="wpm-selectors-text">Select from Preset:</label>
-            <select
-              value={Wpm}
-              onChange={handleWpmChange}
-              className="Wpm-select"
-            >
-              <option value="" default>
-                WPM options
-              </option>
-              <option value={80}>80 WPM</option>
-              <option value={120}>120 WPM</option>
-              <option value={160}>160 WPM</option>
-              <option value={200}>200 WPM</option>
-              <option value={240}>240 WPM</option>
-              <option value={280}>280 WPM</option>
-              <option value={326}>326 WPM</option>
-            </select>
-          </div>
-
-          <div className="Slider-div">
-            <p>Manually set:</p>
+        </nav>
+        <div className="toggle-switch" onClick={themeSet}>
+          <label className="switch-label">
             <input
-              className={darkMode ? "Wpm-slider Wpm-slider-dark" : "Wpm-slider"}
-              type="range"
-              min="100"
-              max="1000"
-              value={delayDuration}
-              onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
+              type="checkbox"
+              className="checkbox"
+              checked={isChecked}
+              onChange={themeSet}
             />
-            <p className="Wpm-display">Words Per minute: {Wpm}</p>
+
+            <span className="slider"></span>
+          </label>
+        </div>
+      </header>
+      <main className="Main">
+        <section className="Main__left">
+          <h1 className="Title">
+            RSVP <br />
+            Reading
+          </h1>
+          <div className="Description">
+            <h2>Rapid Serial Visual Presentation</h2>
+            <p>{sample}</p>
+          </div>
+          <div className="Sample-rsvp">
+            <h2 onClick={handleSampleClick}>{sampleStatus}</h2>
           </div>
         </section>
-        <div className="RSVP--button--Container">
-          <button className="RSVP--button" onClick={openModal}>
-            Start Reading
-          </button>
-        </div>
+        <section className="Main__right">
+          <h2>Insert Text Here:</h2>
+          <div className="Wpm-textUpload">
+            <textarea
+              value={text}
+              onChange={(event) => setText(event.target.value)}
+              rows={10}
+              cols={60}
+              placeholder="Type or upload file to RSVP read"
+              className="Textarea"
+            />
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={handleFileChange}
+              className="file-upload"
+            />
+          </div>
+          <h3 className="Set_WPM">Set WPM</h3>
+          <section className="Wpm__selectors">
+            <div>
+              <label className="wpm-selectors-text">Select from Preset:</label>
+              <select
+                value={Wpm}
+                onChange={handleWpmChange}
+                className="Wpm-select"
+              >
+                <option value="" default>
+                  WPM options
+                </option>
+                <option value={80}>80 WPM</option>
+                <option value={120}>120 WPM</option>
+                <option value={160}>160 WPM</option>
+                <option value={200}>200 WPM</option>
+                <option value={240}>240 WPM</option>
+                <option value={280}>280 WPM</option>
+                <option value={326}>326 WPM</option>
+              </select>
+            </div>
 
-        {/* FIXME: can press on sample multiple times and cause it to play over anf over again
+            <div className="Slider-div">
+              <p>Manually set:</p>
+              <input
+                className={
+                  darkMode ? "Wpm-slider Wpm-slider-dark" : "Wpm-slider"
+                }
+                type="range"
+                min="100"
+                max="1000"
+                value={delayDuration}
+                onChange={(e) => setDelayDuration(parseInt(e.target.value, 10))}
+              />
+              <p className="Wpm-display">Words Per minute: {Wpm}</p>
+            </div>
+          </section>
+          <div className="RSVP--button--Container">
+            <button className="RSVP--button" onClick={openModal}>
+              Start Reading
+            </button>
+          </div>
+
+          {/* FIXME: can press on sample multiple times and cause it to play over anf over again
           TODO: Make it so that you can pause sample on click and user version by pressing pause
           TODO: CSS of Modal */}
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          className="Modal"
-          contentLabel="RSVP Reader"
-          ariaHideApp={false}
-        >
-          <h1>{actionStatus}</h1>
-        </Modal>
-      </section>
-
-      <div className="toggle-switch" onClick={themeSet}>
-        <label className="switch-label">
-          <input
-            type="checkbox"
-            className="checkbox"
-            checked={isChecked}
-            onChange={themeSet}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
-      <footer>
-        <div className={darkMode ? "footer footer-dark" : "footer"}>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            className="Modal"
+            contentLabel="RSVP Reader"
+            ariaHideApp={false}
+          >
+            <h1>{actionStatus}</h1>
+          </Modal>
+        </section>
+      </main>
+      <footer className={darkMode ? "footer footer-dark" : "footer"}>
+        <div>
           <p>Aldo Fonseca 2024</p>
         </div>
       </footer>
