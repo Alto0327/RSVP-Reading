@@ -410,6 +410,7 @@ input::file-selector-button {
 @media only screen and (max-width: 600px) {
   /* Styles for smartphones */
   .Container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
