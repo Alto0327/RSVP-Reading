@@ -10,6 +10,7 @@ const DelayedAction = () => {
   const [actionStatus, setActionStatus] = useState("Text will Appear here");
   const [delayDuration, setDelayDuration] = useState(500);
   const [text, setText] = useState("");
+  const [fileText, setFileText] = useState(null);
   const [sampleStatus, setSampleStatus] = useState("Sample RSVP at 140 wpm");
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -17,7 +18,7 @@ const DelayedAction = () => {
 
   const openModal = () => {
     setIsOpen(true);
-    readText(true);
+    readText();
   };
 
   const closeModal = () => {
@@ -31,12 +32,12 @@ const DelayedAction = () => {
   };
 
   const readText = () => {
-    let words = " ";
-    if (fileText == null) {
-      words = text.split(" ");
-    } else {
+    let words = text.split(" ");
+
+    if (fileText) {
       words = fileText.split(" ");
     }
+
     words.push(" ");
 
     words.forEach((word, index) => {
@@ -65,29 +66,20 @@ const DelayedAction = () => {
     });
   };
 
-  let fileText = null;
-
-  function extractText(event) {
+  const extractText = (event) => {
     const file = event.target.files[0];
 
-    return pdfToText(file)
+    pdfToText(file)
       .then((pdfText) => {
-        fileText = pdfText; // Assign the text to fileText
-        return fileText; // Return the text so it can be used by the caller
+        setFileText(pdfText);
       })
       .catch((error) => {
         console.error("Failed to extract text from pdf", error);
-        return null; // Return null in case of an error
       });
-  }
+  };
 
-  // Assuming this function is triggered by an event, such as a file input change
   const handleFileChange = (event) => {
-    extractText(event).then((fileText) => {
-      if (fileText) {
-        console.log(fileText);
-      }
-    });
+    extractText(event);
   };
 
   const Wpm = Math.round(60000 / delayDuration);
@@ -96,11 +88,6 @@ const DelayedAction = () => {
     "RSVP (Rapid Serial Visual Presentation) reading is a speed-reading technique where text is shown one word or small chunk at a time in a fixed position on a screen. This method minimizes eye movement allowing readers to focus solely on processing words, thus potentially increasing reading speed. By keeping the text centrally located and controlling the pace, RSVP can help improve focus and concentration.";
 
   return (
-    // FIXME: TODO: Refactor HTML Layout Elements ON another branch
-    // FIXME: MEDIA QUERIES ARENT PROPER ON IPHONE
-    // FIXME: DropDown goes onto Title on desktop and Required to be hamburger menu for smaller Media queries
-    // TODO: Make into a google extension as well
-    //test branch
     <div
       className={
         darkMode ? "Container Container-dark" : "Container Container-light"
@@ -156,7 +143,6 @@ const DelayedAction = () => {
               checked={isChecked}
               onChange={themeSet}
             />
-
             <span className="slider"></span>
           </label>
         </div>
@@ -235,10 +221,6 @@ const DelayedAction = () => {
               Start Reading
             </button>
           </div>
-
-          {/* FIXME: can press on sample multiple times and cause it to play over anf over again
-          TODO: Make it so that you can pause sample on click and user version by pressing pause
-          TODO: CSS of Modal */}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

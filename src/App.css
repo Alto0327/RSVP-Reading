@@ -408,7 +408,7 @@ input::file-selector-button {
 /* FIXME: Media queries ARENT SHOWING NICE ON IPHONE */
 /* Smartphones */
 @media only screen and (max-width: 600px) {
-  /* Styles for smartphones */
+  /* Adjusting the container for mobile devices */
   .Container {
     min-height: 100vh;
     display: flex;
@@ -417,10 +417,18 @@ input::file-selector-button {
     align-items: center;
     width: 70vw;
     font-size: 12px;
+    padding-top: env(safe-area-inset-top);      /* Adjusts for the top safe area */
+    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for the bottom safe area */
+    padding-left: env(safe-area-inset-left);     /* Adjusts for the left safe area */
+    padding-right: env(safe-area-inset-right);   /* Adjusts for the right safe area */
   }
-  .Header{
+
+  /* Header adjustments */
+  .Header {
     padding-bottom: 1rem;
   }
+
+  /* Main section adjustments */
   .Main {
     display: flex;
     flex-direction: column;
@@ -429,14 +437,17 @@ input::file-selector-button {
     font-size: 12px;
     padding-top: -6rem;
   }
+
   .Main__left {
     width: 80%;
   }
+
   .Main__left h1 {
     font-size: 4.5rem;
     margin-bottom: -3.5rem;
   }
 
+  /* Main right section adjustments */
   .Main__right {
     margin-right: 10vw;
     margin-left: 10vw;
@@ -447,12 +458,14 @@ input::file-selector-button {
     align-items: center;
   }
 
+  /* Textarea adjustments */
   .Textarea {
     width: 100%;
     height: 25vh;
     margin-bottom: 1rem;
   }
 
+  /* Hide unnecessary elements */
   .Sample-rsvp,
   .file-upload,
   .wpm-selectors-text,
@@ -460,23 +473,28 @@ input::file-selector-button {
     display: none;
   }
 
+  /* WPM select adjustments */
   .Wpm-select {
     width: 5.7rem;
   }
 
+  /* Slider div adjustments */
   .Slider-div {
     display: none;
   }
 
+  /* Button container adjustments */
   .RSVP--button {
     z-index: 100;
   }
+
   .Wpm__selectors,
   .Set_WPM {
     justify-content: flex-start;
     width: 100%;
     z-index: 100;
   }
+
   .RSVP--button--Container {
     justify-content: flex-end;
     width: 100%;
