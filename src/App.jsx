@@ -25,10 +25,12 @@ const DelayedAction = () => {
     setIsOpen(false);
   };
 
-  const themeSet = () => {
+  const themeSet = (event) => {
     event.preventDefault();
-    toggleDarkMode();
-    setIsChecked(!isChecked);
+    if (isChecked !== darkMode) {
+      toggleDarkMode();
+      setIsChecked(!isChecked);
+    }
   };
 
   const readText = () => {
@@ -66,16 +68,16 @@ const DelayedAction = () => {
     });
   };
 
-  const extractText = (event) => {
+  const extractText = async (event) => {
     const file = event.target.files[0];
-
-    pdfToText(file)
-      .then((pdfText) => {
-        setFileText(pdfText);
-      })
-      .catch((error) => {
-        console.error("Failed to extract text from pdf", error);
-      });
+  
+    try {
+      const pdfText = await pdfToText(file);
+      setFileText(pdfText);
+    } catch (error) {
+      console.error("Failed to extract text from pdf", error);
+      alert("Could not extract text from PDF. Please try again.");
+    }
   };
 
   const handleFileChange = (event) => {
