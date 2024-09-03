@@ -398,14 +398,6 @@ input::file-selector-button {
   background-color: inherit;
 }
 
-.Modal h1 {
-  text-align: center;
-  font-size: 2rem; /* Adjust for readability */
-  padding: 1rem;
-  color: inherit; /* Adjust based on dark/light mode */
-}
-
-
 .footer-dark {
   color: var(--light);
   border-top: 0.5px solid var(--light);
@@ -419,40 +411,57 @@ input::file-selector-button {
   /* Adjusting the container for mobile devices */
   .Container {
     min-height: 100vh;
-    width: 90vw; /* Adjust this to make better use of screen space */
-    padding-top: 10vh; /* Adjust padding for better centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    font-size: 12px;
+    padding-top: env(safe-area-inset-top);      /* Adjusts for the top safe area */
+    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for the bottom safe area */
+    padding-left: env(safe-area-inset-left);     /* Adjusts for the left safe area */
+    padding-right: env(safe-area-inset-right);   /* Adjusts for the right safe area */
   }
 
   /* Header adjustments */
   .Header {
     padding-bottom: 1rem;
-    justify-content: center; /* Center the header content */
   }
 
   /* Main section adjustments */
   .Main {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 0; /* Reset padding for consistency */
+    font-size: 12px;
+    padding-top: -6rem;
   }
 
   .Main__left {
-    width: 90%; /* Use a larger percentage for better spacing */
-    margin-bottom: 2rem; /* Add spacing between sections */
+    width: 80%;
   }
 
   .Main__left h1 {
-    font-size: 3rem; /* Reduced for better readability */
+    font-size: 4.5rem;
+    margin-bottom: -3.5rem;
   }
 
   /* Main right section adjustments */
   .Main__right {
-    width: 90vw; /* Better use of width */
+    margin-right: 10vw;
+    margin-left: 10vw;
+    width: 80vw;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   /* Textarea adjustments */
   .Textarea {
     width: 100%;
+    height: 25vh;
     margin-bottom: 1rem;
   }
 
@@ -466,12 +475,24 @@ input::file-selector-button {
 
   /* WPM select adjustments */
   .Wpm-select {
-    width: 6rem; /* Slightly increased for readability */
+    width: 5.7rem;
   }
 
   /* Slider div adjustments */
   .Slider-div {
     display: none;
+  }
+
+  /* Button container adjustments */
+  .RSVP--button {
+    z-index: 100;
+  }
+
+  .Wpm__selectors,
+  .Set_WPM {
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 100;
   }
 
   .RSVP--button--Container {
@@ -480,6 +501,7 @@ input::file-selector-button {
     margin-top: -2.8rem;
   }
 }
+
 /* High-Resolution Smartphones */
 @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (max-width: 600px) and (min-resolution: 192dpi) {
