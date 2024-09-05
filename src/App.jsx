@@ -15,7 +15,7 @@ const DelayedAction = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-
+// TODO: REMOVE ACCESS CSS
   const openModal = () => {
     setIsOpen(true);
     readText();
