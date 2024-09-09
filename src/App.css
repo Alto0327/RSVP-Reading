@@ -510,10 +510,43 @@ input::file-selector-button {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
+  .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 80vh;
+  }
+  .Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Main__right {
+    padding-top: 2em;
+  }
+  .footer{
+    padding-bottom: 1em;
+  }
   .Sample-rsvp,
   .Slider-div,
   .file-upload {
     display: none;
+  }
+  .Set_WPM{
+    padding-top: 1em;
+  }
+  .Wpm__selectors{
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 100;
+  }
+  .RSVP--button--Container {
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: -3.5rem;
   }
 }
 
