@@ -405,12 +405,23 @@ input::file-selector-button {
   border-top: 0.5px solid var(--light);
 }
 
-/* Default styles (for larger screens by default) */
+
 /* TODO: Media Queries */
-/* FIXME: Media queries ARENT SHOWING NICE ON IPHONE */
-/* Smartphones */
-@media only screen and (max-width: 600px) {
-  /* Adjusting the container for mobile devices */
+
+/* Extra Small Devices (Phones, Portrait Mode) */
+@media (max-width: 320px) {
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Small Phones (375px) */
+@media (max-width: 375px) {
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Larger Phones (414px) */
+@media (max-width: 434px) {
   .Container {
     min-height: 100vh;
     display: flex;
@@ -504,12 +515,14 @@ input::file-selector-button {
   }
 }
 
-/* High-Resolution Smartphones */
-@media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (max-width: 600px) and (min-resolution: 192dpi) {
+/* Small Tablets (600px) */
+@media (max-width: 600px) {
+  padding: 25px;
+  font-size: 24px;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+/* Tablets (768px) */
+@media (max-width: 768px) {
   .Container {
     display: flex;
     flex-direction: column;
@@ -550,18 +563,32 @@ input::file-selector-button {
   }
 }
 
-/* High-Resolution Tablets */
-@media only screen and (min-width: 600px) and (max-width: 900px) and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-width: 600px) and (max-width: 900px) and (min-resolution: 192dpi) {
-  /* Styles for high-resolution tablets */
+/* Small Laptops and Large Tablets (992px) */
+@media (max-width: 992px) {
+  padding: 40px;
+  font-size: 28px;
 }
 
-/* Laptops and Small Desktops */
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
-  /* Styles for laptops and small desktops */
+/* Large Laptops and Desktops (1200px) */
+@media (max-width: 1200px) {
+  padding: 50px;
+  font-size: 30px;
 }
 
-/* Large Desktops */
-@media only screen and (min-width: 1200px) {
-  /* Styles for large desktops */
+/* Extra-Large Screens (1440px) */
+@media (max-width: 1440px) {
+  padding: 60px;
+  font-size: 32px;
+}
+
+/* Ultra-Wide Monitors (1600px) */
+@media (max-width: 1600px) {
+  padding: 70px;
+  font-size: 34px;
+}
+
+/* Full HD and Higher (1920px) */
+@media (max-width: 1920px) {
+  padding: 80px;
+  font-size: 36px;
 }
