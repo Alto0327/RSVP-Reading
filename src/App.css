@@ -121,9 +121,11 @@
 }
 
 .Logo-div {
+  position: relative; /* Ensure submenu positions relative to the parent */
   font-size: 16px;
   line-height: 1.6;
   color: var(--dark);
+  z-index: 0;
 }
 
 .Logo-div a {
