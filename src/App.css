@@ -410,14 +410,12 @@ input::file-selector-button {
 
 /* Extra Small Devices (Phones, Portrait Mode) */
 @media (max-width: 320px) {
-  padding: 10px;
-  font-size: 18px;
+
 }
 
 /* Small Phones (375px) */
 @media (max-width: 375px) {
-  padding: 15px;
-  font-size: 20px;
+
 }
 
 /* Larger Phones (414px) */
@@ -517,8 +515,7 @@ input::file-selector-button {
 
 /* Small Tablets (600px) */
 @media (max-width: 600px) {
-  padding: 25px;
-  font-size: 24px;
+
 }
 
 /* Tablets (768px) */
@@ -565,30 +562,25 @@ input::file-selector-button {
 
 /* Small Laptops and Large Tablets (992px) */
 @media (max-width: 992px) {
-  padding: 40px;
-  font-size: 28px;
+
 }
 
 /* Large Laptops and Desktops (1200px) */
 @media (max-width: 1200px) {
-  padding: 50px;
-  font-size: 30px;
+
 }
 
 /* Extra-Large Screens (1440px) */
 @media (max-width: 1440px) {
-  padding: 60px;
-  font-size: 32px;
+
 }
 
 /* Ultra-Wide Monitors (1600px) */
 @media (max-width: 1600px) {
-  padding: 70px;
-  font-size: 34px;
+
 }
 
 /* Full HD and Higher (1920px) */
 @media (max-width: 1920px) {
-  padding: 80px;
-  font-size: 36px;
+
 }
