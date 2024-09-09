@@ -405,21 +405,101 @@ input::file-selector-button {
   border-top: 0.5px solid var(--light);
 }
 
-
 /* TODO: Media Queries */
 
 /* Extra Small Devices (Phones, Portrait Mode) */
 @media (max-width: 320px) {
-
 }
 
 /* Small Phones (375px) */
 @media (max-width: 375px) {
-
 }
 
 /* Larger Phones (414px) */
-@media (max-width: 434px) {
+@media (max-width: 414px) and (min-width: 376px) {
+  .Container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    font-size: 11px;
+  }
+  /* Main section adjustments */
+  .Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5rem;
+  }
+
+  .Main__left {
+    width: 80%;
+  }
+
+  .Main__left h1 {
+    font-size: 3.5rem;
+    margin-bottom: -3.5rem;
+  }
+
+  /* Main right section adjustments */
+  .Main__right {
+    margin-right: 10vw;
+    margin-left: 10vw;
+    width: 80vw;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Textarea adjustments */
+  .Textarea {
+    width: 100%;
+    height: 25vh;
+    margin-bottom: 1rem;
+  }
+
+  /* Hide unnecessary elements */
+  .Sample-rsvp,
+  .file-upload,
+  .wpm-selectors-text,
+  .footer {
+    display: none;
+  }
+
+  /* WPM select adjustments */
+  .Wpm-select {
+    width: 5.7rem;
+  }
+
+  /* Slider div adjustments */
+  .Slider-div {
+    display: none;
+  }
+
+  /* Button container adjustments */
+  .RSVP--button {
+    z-index: 100;
+  }
+
+  .Wpm__selectors,
+  .Set_WPM {
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .RSVP--button--Container {
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: -2.8rem;
+  }
+}
+/* Small Tablets (600px) */
+@media (max-width: 600px) and (min-width: 415px) {
   .Container {
     min-height: 100vh;
     display: flex;
@@ -428,10 +508,6 @@ input::file-selector-button {
     align-items: center;
     width: 70vw;
     font-size: 12px;
-    padding-top: env(safe-area-inset-top);      /* Adjusts for the top safe area */
-    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for the bottom safe area */
-    padding-left: env(safe-area-inset-left);     /* Adjusts for the left safe area */
-    padding-right: env(safe-area-inset-right);   /* Adjusts for the right safe area */
   }
 
   /* Header adjustments */
@@ -513,13 +589,8 @@ input::file-selector-button {
   }
 }
 
-/* Small Tablets (600px) */
-@media (max-width: 600px) {
-
-}
-
 /* Tablets (768px) */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 601px) {
   .Container {
     display: flex;
     flex-direction: column;
@@ -528,7 +599,7 @@ input::file-selector-button {
     width: 70vw;
     height: 80vh;
   }
-  .Main{
+  .Main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -537,7 +608,7 @@ input::file-selector-button {
   .Main__right {
     padding-top: 2em;
   }
-  .footer{
+  .footer {
     padding-bottom: 1em;
   }
   .Sample-rsvp,
@@ -545,10 +616,10 @@ input::file-selector-button {
   .file-upload {
     display: none;
   }
-  .Set_WPM{
+  .Set_WPM {
     padding-top: 1em;
   }
-  .Wpm__selectors{
+  .Wpm__selectors {
     justify-content: flex-start;
     width: 100%;
     z-index: 100;
@@ -561,26 +632,21 @@ input::file-selector-button {
 }
 
 /* Small Laptops and Large Tablets (992px) */
-@media (max-width: 992px) {
-
+@media (max-width: 992px) and (min-width: 769px) {
 }
 
 /* Large Laptops and Desktops (1200px) */
-@media (max-width: 1200px) {
-
+@media (max-width: 1200px) and (min-width: 993px) {
 }
 
 /* Extra-Large Screens (1440px) */
-@media (max-width: 1440px) {
-
+@media (max-width: 1440px) and (min-width: 1201px) {
 }
 
 /* Ultra-Wide Monitors (1600px) */
-@media (max-width: 1600px) {
-
+@media (max-width: 1600px) and (min-width: 1441px) {
 }
 
 /* Full HD and Higher (1920px) */
-@media (max-width: 1920px) {
-
+@media (max-width: 1920px) and (min-width: 1601px) {
 }
