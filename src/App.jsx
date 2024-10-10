@@ -133,7 +133,11 @@ const DelayedAction = () => {
                   </a>
                 </div>
                 <div className="submenu-item">
-                  <a href="https://www.linkedin.com/in/aldo-fonseca-a498142b2/" className="submenu-link">
+                  <a
+                    href="https://www.linkedin.com/in/aldo-fonseca-a498142b2/"
+                    target="_blank"
+                    className="submenu-link"
+                  >
                     Linkedin
                   </a>
                 </div>
