@@ -37,7 +37,7 @@
   font-size: 7rem;
   line-height: 0.9;
 }
-/* vvvvv TODO: & FIXME: HEADER AND NAV vvvvv */
+
 .Container {
   display: flex;
   flex-direction: column;
@@ -48,7 +48,6 @@
 
 .Header {
   padding: 12px 36px;
-  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -58,8 +57,6 @@
 .toggle-switch {
   width: 3rem;
   height: 3rem;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
 }
 
 .Main {
@@ -84,45 +81,33 @@
 }
 
 .footer {
-  margin-top: 10vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin: 10vw 10vw 0 10vw;
   text-align: center;
   width: 80vw;
   font-size: 1rem;
   font-weight: 600;
   border-top: 0.5px solid var(--dark);
-  color: var(--dark);
   padding-top: 8px;
   padding-bottom: 1em;
 }
 
-/* ^^^^ TODO: & FIXME: HEADER AND NAV^^^^  */
-
 .Logo {
   width: 5rem;
   height: 5rem;
+}
+
+.Logo-darkMode,.Logo-default {
   display: none;
 }
 
-.Logo-darkMode {
-  display: none;
+
+.Container-dark .Logo-darkMode , .Container-light .Logo-default  {
+  display: block; 
 }
 
-.Logo-default {
-  display: none;
-}
-
-.Container-dark .Logo-darkMode {
-  display: block; /* Show dark mode logo when dark theme is active */
-}
-
-.Container-light .Logo-default {
-  display: block; /* Show default logo when light theme is active */
-}
 
 .Logo-div {
-  position: relative; /* Ensure submenu positions relative to the parent */
+  position: relative; 
   font-size: 16px;
   line-height: 1.6;
   color: var(--dark);
@@ -142,19 +127,12 @@
   align-items: center;
   justify-content: center;
   height: 5rem;
-  gap: 12px;
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .Logo-div .link::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: -1;
   transform: scaleX(0);
   transform-origin: left;
@@ -171,16 +149,11 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 100%;
   border-radius: 0 0 16px 16px;
-  left: 0;
   width: 100%;
   overflow: hidden;
-  border: 1px solid var(--light);
   opacity: 0;
-  transform: translateY(-12px);
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 1;
 }
 
 .Logo-div .item:hover .submenu {
@@ -210,7 +183,6 @@
 .submenu .submenu-link {
   display: block;
   padding: 12px 12px;
-  width: 100%;
   position: relative;
   text-align: center;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
