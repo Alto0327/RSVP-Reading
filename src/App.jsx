@@ -118,7 +118,11 @@ const DelayedAction = () => {
                   />
                 </span>
               </a>
-              <div className={darkMode ? "submenu submenu-dark" : "submenu submenu-light"}>
+              <div
+                className={
+                  darkMode ? "submenu submenu-dark" : "submenu submenu-light"
+                }
+              >
                 <div className="submenu-item">
                   <a
                     href="https://github.com/Alto0327"
@@ -129,7 +133,7 @@ const DelayedAction = () => {
                   </a>
                 </div>
                 <div className="submenu-item">
-                  <a href="#" className="submenu-link">
+                  <a href="https://www.linkedin.com/in/aldo-fonseca-a498142b2/" className="submenu-link">
                     Linkedin
                   </a>
                 </div>
