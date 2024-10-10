@@ -385,7 +385,7 @@ input::file-selector-button {
 @media (max-width: 375px) {
 }
 
-@media (max-width: 414px) and (min-width: 376px) {
+@media (max-width: 434px) and (min-width: 376px) {
   .Container {
     min-height: 100dvh;
     display: flex;
@@ -450,7 +450,7 @@ input::file-selector-button {
     margin-top: -2.8rem;
   }
 }
-@media (max-width: 600px) and (min-width: 415px) {
+@media (max-width: 600px) and (min-width: 435px) {
   .Container {
     min-height: 100dvh;
     display: flex;
