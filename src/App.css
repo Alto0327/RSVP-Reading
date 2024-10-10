@@ -41,8 +41,8 @@
 .Container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100dvh;
+  min-width: 100dvw;
   transition: background-color 0.3s ease-in-out, color 0.4s ease-in-out;
 }
 
@@ -406,12 +406,7 @@ input::file-selector-button {
 }
 
 
-/* TODO: Media Queries */
 
-/* Extra Small Devices (Phones, Portrait Mode) */
-@media (max-width: 320px) {
-
-}
 
 /* Small Phones (375px) */
 @media (max-width: 375px) {
@@ -428,42 +423,20 @@ input::file-selector-button {
     align-items: center;
     width: 70vw;
     font-size: 12px;
-    padding-top: env(safe-area-inset-top);      /* Adjusts for the top safe area */
-    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for the bottom safe area */
-    padding-left: env(safe-area-inset-left);     /* Adjusts for the left safe area */
-    padding-right: env(safe-area-inset-right);   /* Adjusts for the right safe area */
   }
 
-  /* Header adjustments */
-  .Header {
-    padding-bottom: 1rem;
-  }
 
   /* Main section adjustments */
-  .Main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    padding-top: -6rem;
-  }
 
-  .Main__left {
-    width: 80%;
+  .Main__left, .Main__right {
+    width: 80dvw;
   }
 
   .Main__left h1 {
     font-size: 4.5rem;
-    margin-bottom: -3.5rem;
   }
 
-  /* Main right section adjustments */
   .Main__right {
-    margin-right: 10vw;
-    margin-left: 10vw;
-    width: 80vw;
-    padding-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -471,16 +444,15 @@ input::file-selector-button {
 
   /* Textarea adjustments */
   .Textarea {
-    width: 100%;
+    width: 80dvw;
     height: 25vh;
-    margin-bottom: 1rem;
   }
 
   /* Hide unnecessary elements */
   .Sample-rsvp,
   .file-upload,
   .wpm-selectors-text,
-  .footer {
+  .footer,.Slider-div {
     display: none;
   }
 
@@ -489,10 +461,6 @@ input::file-selector-button {
     width: 5.7rem;
   }
 
-  /* Slider div adjustments */
-  .Slider-div {
-    display: none;
-  }
 
   /* Button container adjustments */
   .RSVP--button {
@@ -500,15 +468,12 @@ input::file-selector-button {
   }
 
   .Wpm__selectors,
-  .Set_WPM {
-    justify-content: flex-start;
+  .Set_WPM { 
     width: 100%;
-    z-index: 100;
+
   }
 
   .RSVP--button--Container {
-    justify-content: flex-end;
-    width: 100%;
     margin-top: -2.8rem;
   }
 }
