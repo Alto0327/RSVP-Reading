@@ -160,6 +160,11 @@
   transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.submenu-light{
+  background-color: var(--dark);
+  color: var(--light);
+}
+
 .Logo-div .item .submenu {
   display: flex;
   flex-direction: column;
@@ -599,24 +604,9 @@ input::file-selector-button {
     width: 100%;
     margin-top: -3.5rem;
   }
+  .RSVP--button {
+    z-index: 100;
+  }
+
 }
 
-/* Small Laptops and Large Tablets (992px) */
-@media (max-width: 992px) and (min-width: 769px) {
-}
-
-/* Large Laptops and Desktops (1200px) */
-@media (max-width: 1200px) and (min-width: 993px) {
-}
-
-/* Extra-Large Screens (1440px) */
-@media (max-width: 1440px) and (min-width: 1201px) {
-}
-
-/* Ultra-Wide Monitors (1600px) */
-@media (max-width: 1600px) and (min-width: 1441px) {
-}
-
-/* Full HD and Higher (1920px) */
-@media (max-width: 1920px) and (min-width: 1601px) {
-}

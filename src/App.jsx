@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import Modal from "react-modal";
 import { DarkModeContext } from "./components/ThemeContext";
 import LogoDark from "./assets/Logo-Dark.png";
@@ -15,7 +15,8 @@ const DelayedAction = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-// TODO: REMOVE ACCESS CSS
+  const timeoutIds = useRef([]); // Ref to store timeout IDs
+
   const openModal = () => {
     setIsOpen(true);
     readText();
@@ -23,6 +24,9 @@ const DelayedAction = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+    // Clear all timeouts when the modal is closed
+    timeoutIds.current.forEach((id) => clearTimeout(id));
+    timeoutIds.current = []; // Reset the array
   };
 
   const themeSet = () => {
@@ -41,9 +45,12 @@ const DelayedAction = () => {
     words.push(" ");
 
     words.forEach((word, index) => {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setActionStatus(word);
       }, delayDuration * (index + 1));
+
+      // Store timeout ID in ref
+      timeoutIds.current.push(timeoutId);
     });
   };
 
@@ -111,7 +118,7 @@ const DelayedAction = () => {
                   />
                 </span>
               </a>
-              <div className={darkMode ? "submenu submenu-dark" : "submenu "}>
+              <div className={darkMode ? "submenu submenu-dark" : "submenu submenu-light"}>
                 <div className="submenu-item">
                   <a
                     href="https://github.com/Alto0327"
