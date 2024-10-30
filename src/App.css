@@ -310,7 +310,7 @@ input::file-selector-button {
   display: flex;
   justify-content: start;
   padding-bottom: 1rem;
-  z-index: 100;
+  z-index: 0;
   width: 100%;
 }
 .Wpm-slider {
@@ -334,6 +334,7 @@ input::file-selector-button {
 .RSVP--button--Container {
   display: flex;
   justify-content: center;
+  z-index: 0;
 }
 
 .RSVP--button {
@@ -375,6 +376,7 @@ input::file-selector-button {
   justify-content: center;
   align-items: center;
   background-color: inherit;
+  z-index: 10;
 }
 
 .footer-dark {
